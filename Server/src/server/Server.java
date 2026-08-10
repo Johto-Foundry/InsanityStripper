@@ -59,7 +59,6 @@ public class Server {
 	public static ObjectHandler objectHandler = new ObjectHandler();
 	public static ObjectManager objectManager = new ObjectManager();
 	public static FightPits fightPits = new FightPits();
-	public static PestControl pestControl = new PestControl();
 	public static NPCDrops npcDrops = new NPCDrops();
 	public static ClanChatHandler clanChat = new ClanChatHandler();
 	public static FightCaves fightCaves = new FightCaves();
@@ -148,7 +147,6 @@ public class Server {
 				shopHandler.process();
 				objectManager.process();
 				fightPits.process();
-				pestControl.process();
 				cycleTime = engineTimer.elapsed();
 				sleepTime = cycleRate - cycleTime;
 				totalCycleTime += cycleTime;

@@ -88,9 +88,7 @@ public class PlayerSave
 					} else if (token.equals("teleblock-length")) {
 						p.teleBlockDelay = System.currentTimeMillis();
 						p.teleBlockLength = Integer.parseInt(token2);							
-					} else if (token.equals("pc-points")) {
-						p.pcPoints = Integer.parseInt(token2);					
-					} else if (token.equals("slayerTask")) {
+										} else if (token.equals("slayerTask")) {
 						p.slayerTask = Integer.parseInt(token2);					
 					} else if (token.equals("taskAmount")) {
 						p.taskAmount = Integer.parseInt(token2);					
@@ -241,9 +239,6 @@ characterfile.write("special-amount = ", 0, 17);
 
 			characterfile.write("teleblock-length = ", 0, 19);
 			characterfile.write(Integer.toString(tbTime), 0, Integer.toString(tbTime).length());
-			characterfile.newLine();
-			characterfile.write("pc-points = ", 0, 12);
-			characterfile.write(Integer.toString(p.pcPoints), 0, Integer.toString(p.pcPoints).length());
 			characterfile.newLine();
 			characterfile.write("slayerTask = ", 0, 13);
 			characterfile.write(Integer.toString(p.slayerTask), 0, Integer.toString(p.slayerTask).length());

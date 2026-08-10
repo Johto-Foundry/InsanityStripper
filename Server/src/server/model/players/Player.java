@@ -80,13 +80,11 @@ newLocation,
 	barrageCount = 0,
 	delayedDamage = 0,
 	delayedDamage2 = 0,
-	pcPoints = 0,
 	magePoints = 0,
 	desertTreasure = 0,
 	lastArrowUsed = -1,
 	clanId = -1,
 	autoRet = 0,
-	pcDamage = 0,
 	xInterfaceId = 0,
 	xRemoveId = 0,
 	xRemoveSlot = 0,
@@ -1443,13 +1441,6 @@ public int reduceSpellId;
 		return playerId;
 	}
 	
-	public boolean inPcBoat() {
-		return absX >= 2660 && absX <= 2663 && absY >= 2638 && absY <= 2643;
-	}
-	
-	public boolean inPcGame() {
-		return absX >= 2624 && absX <= 2690 && absY >= 2550 && absY <= 2619;
-	}
 
 
 	public void setHitDiff(int hitDiff) {

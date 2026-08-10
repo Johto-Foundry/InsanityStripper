@@ -772,9 +772,6 @@ public class Client extends Player {
 	
 	
 	public void correctCoordinates() {
-		if (inPcGame()) {
-			getPA().movePlayer(2657, 2639, 0);
-		}
 		if (inFightCaves()) {
 			getPA().movePlayer(absX, absY, playerId * 4);
 			sendMessage("Your wave will start in 10 seconds.");

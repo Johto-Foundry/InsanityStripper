@@ -426,17 +426,6 @@ public class ShopAssistant {
 				} else {
 					c.sendMessage("You do not have enough points to buy this item.");			
 				}
-			} else if (c.myShopId == 18) {
-				if (c.pcPoints >= getSpecialItemValue(itemID)) {
-					if (c.getItems().freeSlots() > 0){
-						c.pcPoints -= getSpecialItemValue(itemID);
-						c.getItems().addItem(itemID,1);
-						c.getItems().resetItems(3823);
-					}
-				} else {
-					c.sendMessage("You do not have enough points to buy this item.");			
-				}
-
 			}
 		}
 		

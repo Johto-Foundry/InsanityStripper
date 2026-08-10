@@ -350,11 +350,6 @@ public class CombatAssistant{
 					c.getPA().refreshSkill(3);
 					c.getPA().refreshSkill(4);
 				}
-				if (damage > 0) {
-					if (Server.npcHandler.npcs[i].npcType >= 3777 && Server.npcHandler.npcs[i].npcType <= 3780) {
-						c.pcDamage += damage;					
-					}				
-				}
 				boolean dropArrows = true;
 						
 				for(int noArrowId : c.NO_ARROW_DROP) {
@@ -410,11 +405,6 @@ public class CombatAssistant{
 				c.getPA().addSkillXP((c.MAGIC_SPELLS[c.oldSpellId][7] + damage*Config.MAGIC_EXP_RATE/3), 3);
 				c.getPA().refreshSkill(3);
 				c.getPA().refreshSkill(6);
-				if (damage > 0) {
-					if (Server.npcHandler.npcs[i].npcType >= 3777 && Server.npcHandler.npcs[i].npcType <= 3780) {
-						c.pcDamage += damage;					
-					}				
-				}
 				if(getEndGfxHeight() == 100 && !magicFailed){ // end GFX
 					Server.npcHandler.npcs[i].gfx100(c.MAGIC_SPELLS[c.oldSpellId][5]);
 				} else if (!magicFailed){
@@ -513,11 +503,6 @@ public class CombatAssistant{
 			c.getPA().addSkillXP((damage*Config.MELEE_EXP_RATE/3), 3);
 			c.getPA().refreshSkill(c.fightMode);
 			c.getPA().refreshSkill(3);
-		}
-		if (damage > 0) {
-			if (Server.npcHandler.npcs[i].npcType >= 3777 && Server.npcHandler.npcs[i].npcType <= 3780) {
-				c.pcDamage += damage;					
-			}				
 		}
 		if (damage > 0 && guthansEffect) {
 			c.playerLevel[3] += damage;

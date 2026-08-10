@@ -129,14 +129,6 @@ public class ActionHandler {
 			else
 				c.getPA().walkTo(1,0);
 		break;
-		//pc boat
-		case 14315:
-			c.getPA().movePlayer(2661,2639,0);
-		break;
-		case 14314:
-			c.getPA().movePlayer(2657,2639,0);
-		break;
-		
 		case 1596:
 		case 1597:
 		if (c.getY() >= c.objectY)
@@ -661,12 +653,6 @@ public class ActionHandler {
 			case 2566:
 				c.getShops().openSkillCape();
 			break;
-			case 3789:
-				c.sendMessage("You currently have " + c.pcPoints + " pest control points.");
-			break;
-			case 3788:
-				c.getShops().openVoid();
-			break;
 			case 905:
 				c.getDH().sendDialogues(5, npcType);
 			break;
@@ -719,9 +705,6 @@ public class ActionHandler {
 			break;
 			case 334: //sharks
 				c.getFishing().setupFishing(383);
-			break;
-			case 3788:
-				c.getShops().openVoid();
 			break;
 			case 494:
 				c.getPA().openUpBank();
