@@ -204,7 +204,7 @@ public class NPCHandler {
 	}
 	
 	/**
-	* Summon npc, barrows, etc
+	* Summon npc
 	**/
 	public void spawnNpc(Client c, int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack, int defence, boolean attackPlayer, boolean headIcon) {
 		// first, search for a free slot
@@ -237,16 +237,7 @@ public class NPCHandler {
 		if(attackPlayer) {
 			newNPC.underAttack = true;
 			if(c != null) {
-				if(server.model.minigames.Barrows.COFFIN_AND_BROTHERS[c.randomCoffin][1] != newNPC.npcType) {
-					if(newNPC.npcType == 2025 || newNPC.npcType == 2026 || newNPC.npcType == 2027 || newNPC.npcType == 2028 || newNPC.npcType == 2029 || newNPC.npcType == 2030) {
-						newNPC.forceChat("You dare disturb my rest!");
-					}
-				}
-				if(server.model.minigames.Barrows.COFFIN_AND_BROTHERS[c.randomCoffin][1] == newNPC.npcType) {
-					newNPC.forceChat("You dare steal from us!");
-				}
-				
-				newNPC.killerId = c.playerId;
+newNPC.killerId = c.playerId;
 			}
 		}
 		npcs[slot] = newNPC;
@@ -476,24 +467,6 @@ public class NPCHandler {
 			case 122:
 			return 164;
 			
-			case 2028: // karil
-			return 2075;
-					
-			case 2025: // ahrim
-			return 729;
-			
-			case 2026: // dharok
-			return 2067;
-			
-			case 2027: // guthan
-			return 2080;
-			
-			case 2029: // torag
-			return 0x814;
-			
-			case 2030: // verac
-			return 2062;
-			
 			case 2881: //supreme
 			return 2855;
 			
@@ -722,10 +695,6 @@ public class NPCHandler {
 	**/
 	public int getNpcDelay(int i) {
 		switch(npcs[i].npcType) {
-			case 2025:
-			case 2028:
-			return 7;
-			
 			case 2745:
 			return 8;
 			
@@ -769,11 +738,6 @@ public class NPCHandler {
 			else
 				return 2;
 			
-			case 2025:
-			return 4;
-			case 2028:
-			return 3;
-
 			default:
 			return 2;
 		}
@@ -896,14 +860,6 @@ public class NPCHandler {
 					|| Server.playerHandler.players[npcs[i].spawnedBy].respawnTimer > 0 
 					|| !Server.playerHandler.players[npcs[i].spawnedBy].goodDistance(npcs[i].getX(), npcs[i].getY(), Server.playerHandler.players[npcs[i].spawnedBy].getX(), Server.playerHandler.players[npcs[i].spawnedBy].getY(), 20)) {
 							
-						if(Server.playerHandler.players[npcs[i].spawnedBy] != null) {
-							for(int o = 0; o < Server.playerHandler.players[npcs[i].spawnedBy].barrowsNpcs.length; o++){
-								if(npcs[i].npcType == Server.playerHandler.players[npcs[i].spawnedBy].barrowsNpcs[o][0]) {
-									if (Server.playerHandler.players[npcs[i].spawnedBy].barrowsNpcs[o][1] == 1)
-										Server.playerHandler.players[npcs[i].spawnedBy].barrowsNpcs[o][1] = 0;
-								}
-							}
-						}
 						npcs[i] = null;
 					}
 				}
@@ -1052,7 +1008,6 @@ public class NPCHandler {
 						npcs[i].animUpdateRequired = true;
 						npcs[i].freezeTimer = 0;
 						npcs[i].applyDead = true;
-						killedBarrow(i);
 						if (isFightCaveNpc(i))
 							killedTzhaar(i);
 						npcs[i].actionTimer = 4; // delete time
@@ -1150,18 +1105,7 @@ public class NPCHandler {
 	/**
 	 * 
 	 */
-	private void killedBarrow(int i) {
-		Client c = (Client)Server.playerHandler.players[npcs[i].killedBy];
-		if(c != null) {
-			for(int o = 0; o < c.barrowsNpcs.length; o++){
-				if(npcs[i].npcType == c.barrowsNpcs[o][0]) {
-					c.barrowsNpcs[o][1] = 2; // 2 for dead
-					c.barrowsKillCount++;
-				}
-			}
-		}
-	}
-	
+
 	private void killedTzhaar(int i) {
 		final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
 		c2.tzhaarKilled++;
@@ -1189,7 +1133,7 @@ public class NPCHandler {
 		c.waveId = 300;
 	}
 	
-	
+
 	/**
 	* Dropping Items!
 	**/
@@ -1661,29 +1605,6 @@ public class NPCHandler {
 				npcs[i].attackType = 1;
 				npcs[i].projectileId = 1206;
 			break;
-			case 2025:
-			npcs[i].attackType = 2;
-			int r = Misc.random(3);
-			if(r == 0) {
-				npcs[i].gfx100(158);
-				npcs[i].projectileId = 159;
-				npcs[i].endGfx = 160;
-			}
-			if(r == 1) {
-				npcs[i].gfx100(161);
-				npcs[i].projectileId = 162;
-				npcs[i].endGfx = 163;
-			}
-			if(r == 2) {
-				npcs[i].gfx100(164);
-				npcs[i].projectileId = 165;
-				npcs[i].endGfx = 166;
-			}
-			if(r == 3) {
-				npcs[i].gfx100(155);
-				npcs[i].projectileId = 156;
-			}
-			break;
 			case 2881://supreme
 				npcs[i].attackType = 1;
 				npcs[i].projectileId = 298;
@@ -1693,11 +1614,6 @@ public class NPCHandler {
 				npcs[i].attackType = 2;
 				npcs[i].projectileId = 162;
 				npcs[i].endGfx = 477;
-			break;
-			
-			case 2028:
-				npcs[i].attackType = 1;
-				npcs[i].projectileId = 27;
 			break;
 			
 			case 3200:
@@ -1751,9 +1667,6 @@ public class NPCHandler {
 	**/	
 	public int distanceRequired(int i) {
 		switch(npcs[i].npcType) {
-			case 2025:
-			case 2028:
-			return 6;
 			case 50:
 			case 2562:
 			return 2;
@@ -1816,12 +1729,6 @@ public class NPCHandler {
 			
 			case 50:
 			return 90;
-			
-			case 2025:
-			return 85;
-			
-			case 2028:
-			return 80;
 			
 			default:
 			return 85;

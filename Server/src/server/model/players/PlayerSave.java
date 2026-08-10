@@ -83,14 +83,8 @@ public class PlayerSave
 						p.skullTimer = Integer.parseInt(token2);
 					} else if (token.equals("magic-book")) {
 						p.playerMagicBook = Integer.parseInt(token2);
-					} else if (token.equals("brother-info")) {
-						p.barrowsNpcs[Integer.parseInt(token3[0])][1] = Integer.parseInt(token3[1]);
 					 } else if (token.equals("special-amount")) {
-						p.specAmount = Double.parseDouble(token2);	
-					 } else if (token.equals("selected-coffin")) {
-						p.randomCoffin = Integer.parseInt(token2);	
-					} else if (token.equals("barrows-killcount")) {
-						p.pkPoints = Integer.parseInt(token2);							
+						p.specAmount = Double.parseDouble(token2);							
 					} else if (token.equals("teleblock-length")) {
 						p.teleBlockDelay = System.currentTimeMillis();
 						p.teleBlockLength = Integer.parseInt(token2);							
@@ -103,9 +97,7 @@ public class PlayerSave
 					} else if (token.equals("magePoints")) {
 						p.magePoints = Integer.parseInt(token2);					
 					} else if (token.equals("autoRet")) {
-						p.autoRet = Integer.parseInt(token2);					
-					} else if (token.equals("barrowskillcount")) {
-						p.barrowsKillCount = Integer.parseInt(token2);
+						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
 					} else if (token.equals("wave")) {
@@ -243,22 +235,10 @@ public class PlayerSave
 			characterfile.write("magic-book = ", 0, 13);
 			characterfile.write(Integer.toString(p.playerMagicBook), 0, Integer.toString(p.playerMagicBook).length());
 			characterfile.newLine();
-			for (int b = 0; b < p.barrowsNpcs.length; b++) {
-				characterfile.write("brother-info = ", 0, 15);
-				characterfile.write(Integer.toString(b), 0, Integer.toString(b).length());
-				characterfile.write("	", 0, 1);
-				characterfile.write(p.barrowsNpcs[b][1] <= 1 ? Integer.toString(0) : Integer.toString(p.barrowsNpcs[b][1]), 0, Integer.toString(p.barrowsNpcs[b][1]).length());
-				characterfile.newLine();
-			}	
-			characterfile.write("special-amount = ", 0, 17);
+characterfile.write("special-amount = ", 0, 17);
 			characterfile.write(Double.toString(p.specAmount), 0, Double.toString(p.specAmount).length());
 			characterfile.newLine();
-			characterfile.write("selected-coffin = ", 0, 18);
-			characterfile.write(Integer.toString(p.randomCoffin), 0, Integer.toString(p.randomCoffin).length());
-			characterfile.newLine();
-			characterfile.write("barrows-killcount = ", 0, 20);
-			characterfile.write(Integer.toString(p.barrowsKillCount), 0, Integer.toString(p.barrowsKillCount).length());
-			characterfile.newLine();
+
 			characterfile.write("teleblock-length = ", 0, 19);
 			characterfile.write(Integer.toString(tbTime), 0, Integer.toString(tbTime).length());
 			characterfile.newLine();
@@ -277,9 +257,7 @@ public class PlayerSave
 			characterfile.write("autoRet = ", 0, 10);
 			characterfile.write(Integer.toString(p.autoRet), 0, Integer.toString(p.autoRet).length());
 			characterfile.newLine();
-			characterfile.write("barrowskillcount = ", 0, 19);
-			characterfile.write(Integer.toString(p.barrowsKillCount), 0, Integer.toString(p.barrowsKillCount).length());
-			characterfile.newLine();
+
 			characterfile.write("flagged = ", 0, 10);
 			characterfile.write(Boolean.toString(p.accountFlagged), 0, Boolean.toString(p.accountFlagged).length());
 			characterfile.newLine();

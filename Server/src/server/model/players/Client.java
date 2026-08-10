@@ -450,10 +450,6 @@ public class Client extends Player {
 			} else {
 				getPA().showOption(3, 0, "Challenge", 1);
 			}
-		} else if(inBarrows()){
-			getPA().sendFrame99(2);
-			getPA().sendFrame126("Kill Count: "+barrowsKillCount, 4536);
-			getPA().walkableInterface(4535);
 		} else if (inCwGame || inPits) {
 			getPA().showOption(3, 0, "Attack", 1);	
 		} else if (getPA().inPitsWait()) {

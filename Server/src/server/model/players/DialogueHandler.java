@@ -69,7 +69,7 @@ public class DialogueHandler {
 			c.dialogueAction = 7;
 		break;
 		case 16:
-			sendOption2("I would like to reset my barrows brothers.", "I would like to fix all my barrows");
+			sendOption2("Never mind.", "I would like to fix all my barrows");
 			c.dialogueAction = 8;
 		break;
 		case 17:

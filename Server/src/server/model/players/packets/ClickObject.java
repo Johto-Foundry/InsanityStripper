@@ -140,55 +140,7 @@ public class ClickObject implements PacketType {
 					c.objectYOffset = -1;
 				break;
 				case 4419:
-				case 6707: // verac
-				c.objectYOffset = 3;
-				break;
-				case 6823:
-				c.objectDistance = 2;
-				c.objectYOffset = 1;
-				break;
-				
-				case 6706: // torag
-				c.objectXOffset = 2;
-				break;
-				case 6772:
-				c.objectDistance = 2;
-				c.objectYOffset = 1;
-				break;
-				
-				case 6705: // karils
-				c.objectYOffset = -1;
-				break;
-				case 6822:
-				c.objectDistance = 2;
-				c.objectYOffset = 1;
-				break;
-				
-				case 6704: // guthan stairs
-				c.objectYOffset = -1;
-				break;
-				case 6773:
-				c.objectDistance = 2;
-				c.objectXOffset = 1;
-				c.objectYOffset = 1;
-				break;
-				
-				case 6703: // dharok stairs
-				c.objectXOffset = -1;
-				break;
-				case 6771:
-				c.objectDistance = 2;
-				c.objectXOffset = 1;
-				c.objectYOffset = 1;
-				break;
-				
-				case 6702: // ahrim stairs
-				c.objectXOffset = -1;
-				break;
-				case 6821:
-				c.objectDistance = 2;
-				c.objectXOffset = 1;
-				c.objectYOffset = 1;
+					c.objectYOffset = 3;
 				break;
 				case 1276:
 				case 1278://trees

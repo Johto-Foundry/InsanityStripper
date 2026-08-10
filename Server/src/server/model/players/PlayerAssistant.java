@@ -1833,27 +1833,8 @@ public class PlayerAssistant{
 		refreshSkill(skill);
 		return true;
 	}
-
-
-	public void resetBarrows() {
-		c.barrowsNpcs[0][1] = 0;
-		c.barrowsNpcs[1][1] = 0;
-		c.barrowsNpcs[2][1] = 0;
-		c.barrowsNpcs[3][1] = 0;
-		c.barrowsNpcs[4][1] = 0;
-		c.barrowsNpcs[5][1] = 0;
-		c.barrowsKillCount = 0;
-		c.randomCoffin = Misc.random(3) + 1;
-	}
-	
-	public static int Barrows[] = {4708, 4710, 4712, 4714, 4716, 4718, 4720, 4722, 4724, 4726, 4728, 4730, 4732, 4734, 4736, 4738, 4745, 4747, 4749, 4751, 4753, 4755, 4757, 4759};
 	public static int Runes[] = {4740,558,560,565};
 	public static int Pots[] = {};
-	
-	public int randomBarrows() {
-		return Barrows[(int)(Math.random()*Barrows.length)];
-	}
-
 	public int randomRunes() {
 		return Runes[(int) (Math.random()*Runes.length)];
 	}

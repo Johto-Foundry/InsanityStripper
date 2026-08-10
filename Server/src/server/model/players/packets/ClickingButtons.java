@@ -4,7 +4,6 @@ import server.Config;
 import server.Server;
 import server.model.items.GameItem;
 import server.model.players.Client;
-import server.model.players.SkillMenu;
 import server.model.players.PacketType;
 import server.util.Misc;
 
@@ -35,8 +34,7 @@ public class ClickingButtons implements PacketType {
 					//rock crabs
 					c.getPA().spellTeleport(2676, 3715, 0);
 				} else if (c.teleAction == 2) {
-					//barrows
-					c.getPA().spellTeleport(3565, 3314, 0);
+					c.sendMessage("This teleport is currently unavailable.");
 				} else if (c.teleAction == 3) {
 					//godwars
 					c.getPA().spellTeleport(2916, 3612, 0);
@@ -354,31 +352,8 @@ public class ClickingButtons implements PacketType {
 				}		
 			break;
 			
-			case 9157://barrows tele to tunnels
-				if(c.dialogueAction == 1) {
-					int r = 4;
-					//int r = Misc.random(3);
-					switch(r) {
-						case 0:
-							c.getPA().movePlayer(3534, 9677, 0);
-							break;
-						
-						case 1:
-							c.getPA().movePlayer(3534, 9712, 0);
-							break;
-						
-						case 2:
-							c.getPA().movePlayer(3568, 9712, 0);
-							break;
-						
-						case 3:
-							c.getPA().movePlayer(3568, 9677, 0);
-							break;
-						case 4:
-							c.getPA().movePlayer(3551, 9694, 0);
-							break;
-					}
-				} else if (c.dialogueAction == 2) {
+			case 9157:
+				if (c.dialogueAction == 2) {
 					c.getPA().movePlayer(2507, 4717, 0);		
 				} else if (c.dialogueAction == 5) {
 					c.getSlayer().giveTask();
@@ -387,9 +362,6 @@ public class ClickingButtons implements PacketType {
 				} else if (c.dialogueAction == 7) {
 					c.getPA().startTeleport(3088,3933,0,"modern");
 					c.sendMessage("NOTE: You are now in the wilderness...");
-				} else if (c.dialogueAction == 8) {
-					c.getPA().resetBarrows();
-					c.sendMessage("Your barrows have been reset.");
 				}
 				c.dialogueAction = 0;
 				c.getPA().removeAllWindows();
@@ -708,7 +680,7 @@ public class ClickingButtons implements PacketType {
 			
 			case 4143:
 			case 50245:
-			c.getDH().sendOption5("Barrows", "Pest Control", "Tzhaar", "Duel Arena", "Coming Soon");
+			c.getDH().sendOption5("Coming Soon", "Pest Control", "Tzhaar", "Duel Arena", "Coming Soon");
 			c.teleAction = 2;
 			break;
 			

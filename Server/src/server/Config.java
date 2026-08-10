@@ -72,13 +72,7 @@ public class Config {
 	public static final int NPC_RANDOM_WALK_DISTANCE = 5; // the square created , 3x3 so npc can't move out of that box when randomly walking
 	public static final int NPC_FOLLOW_DISTANCE = 10; // how far can the npc follow you from it's spawn point, 													
 	public static final int[] UNDEAD_NPCS = {90,91,92,93,94,103,104,73,74,75,76,77}; // undead npcs
-
-	/**
-	 * Barrows Reward
-	 */
-	
-	
-	/**
+/**
 	 * Glory
 	 */
 	public static final int EDGEVILLE_X = 3087;
