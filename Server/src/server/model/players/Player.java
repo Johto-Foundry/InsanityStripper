@@ -60,8 +60,7 @@ public abstract class Player {
 	privateChat, 
 	friendSlot = 0,
 	dialogueId, 
-	randomCoffin, 
-	newLocation, 
+newLocation, 
 	specEffect, 
 	specBarId, 
 	attackLevelReq, 
@@ -264,18 +263,7 @@ public abstract class Player {
 	public boolean fullVoidMelee() {
 		return playerEquipment[playerHat] == 11665 && playerEquipment[playerLegs] == 8840 && playerEquipment[playerChest] == 8839 && playerEquipment[playerHands] == 8842;
 	}
-	
-	public int[][] barrowsNpcs = {
-	{2030, 0}, //verac
-	{2029, 0}, //toarg
-	{2028, 0}, // karil
-	{2027, 0}, // guthan
-	{2026, 0}, // dharok
-	{2025, 0} // ahrim
-	};
-	public int barrowsKillCount;
-	
-	public int reduceSpellId;
+public int reduceSpellId;
 	public final int[] REDUCE_SPELL_TIME = {250000, 250000, 250000, 500000,500000,500000}; // how long does the other player stay immune to the spell
 	public long[] reduceSpellDelay = new long[6];
 	public final int[] REDUCE_SPELLS = {1153,1157,1161,1542,1543,1562};
@@ -346,12 +334,6 @@ public abstract class Player {
 	
 	public boolean antiFirePot = false;
 	
-	/**
-	 * Castle Wars
-	 */
-	public int castleWarsTeam;
-	public boolean inCwGame;
-	public boolean inCwWait;
 	
 	/**
 	 * Fight Pits
@@ -369,15 +351,6 @@ public abstract class Player {
 		}
 		return false;
 	}
-	
-	public boolean inBarrows() {		
-		if(absX > 3520 && absX < 3598 && absY > 9653 && absY < 9750) {
-			return true;
-		}
-		return false;
-	}
-
-	
 	public boolean inArea(int x, int y, int x1, int y1) {
 		if (absX > x && absX < x1 && absY < y && absY > y1) {
 			return true;

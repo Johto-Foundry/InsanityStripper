@@ -18,16 +18,13 @@ import server.model.players.PlayerSave;
 import server.model.minigames.*;
 import server.net.ConnectionHandler;
 import server.net.ConnectionThrottleFilter;
-import server.util.ShutDownHook;
 import server.util.SimpleTimer;
 import server.util.log.Logger;
 import server.world.ItemHandler;
 import server.world.ObjectHandler;
 import server.world.ObjectManager;
 import server.world.ShopHandler;
-import server.world.map.VirtualWorld;
 import server.world.ClanChatHandler;
-import server.world.WorldMap;
 
 /**
  * Server.java
@@ -61,7 +58,6 @@ public class Server {
 	public static ShopHandler shopHandler = new ShopHandler();
 	public static ObjectHandler objectHandler = new ObjectHandler();
 	public static ObjectManager objectManager = new ObjectManager();
-	public static CastleWars castleWars = new CastleWars();
 	public static FightPits fightPits = new FightPits();
 	public static PestControl pestControl = new PestControl();
 	public static NPCDrops npcDrops = new NPCDrops();

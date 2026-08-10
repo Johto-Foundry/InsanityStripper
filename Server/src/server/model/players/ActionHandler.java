@@ -167,18 +167,6 @@ public class ActionHandler {
 			//Server.objectHandler.startObelisk(objectType);
 			Server.objectManager.startObelisk(objectType);
 		break;
-		case 4387:
-			//Server.castleWars.joinWait(c,1);
-		break;
-		
-		case 4388:
-			//Server.castleWars.joinWait(c,2);
-		break;
-		
-		case 4408:
-			//Server.castleWars.joinWait(c,3);
-		break;
-		
 		case 9369:
 			if (c.getY() > 5175)
 				c.getPA().movePlayer(2399, 5175, 0);
@@ -192,23 +180,6 @@ public class ActionHandler {
 				c.getPA().movePlayer(2399, 5169, 0);
 			}	
 		break;
-		case 4411:
-		case 4415:
-		case 4417:
-		case 4418:
-		case 4419:
-		case 4420:
-		case 4469:
-		case 4470:
-		case 4911:
-		case 4912:
-		case 1747:
-		case 1757:
- 			//Server.castleWars.handleObjects(c, objectType, obX, obY);
-		break;
-		
-		
-		
 		case 2286:
 		case 154:
 		case 4058:

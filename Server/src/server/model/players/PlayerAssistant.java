@@ -1916,27 +1916,6 @@ public class PlayerAssistant{
 		return c.getX() <= 2404 && c.getX() >= 2394 && c.getY() <= 5175 && c.getY() >= 5169;
 	}
 	
-	public void castleWarsObjects() {
-		object(-1, 2373, 3119, -3, 10);
-		object(-1, 2372, 3119, -3, 10);
-	}
-	
-	public void removeFromCW() {
-		if (c.castleWarsTeam == 1) {
-			if (c.inCwWait) {
-				Server.castleWars.saradominWait.remove(Server.castleWars.saradominWait.indexOf(c.playerId));
-			} else {
-				Server.castleWars.saradomin.remove(Server.castleWars.saradomin.indexOf(c.playerId));
-			}
-		} else if (c.castleWarsTeam == 2) {
-			if (c.inCwWait) {
-				Server.castleWars.zamorakWait.remove(Server.castleWars.zamorakWait.indexOf(c.playerId));
-			} else {
-				Server.castleWars.zamorak.remove(Server.castleWars.zamorak.indexOf(c.playerId));
-			}		
-		}
-	}
-	
 	public int antiFire() {
 		int toReturn = 0;
 		if (c.antiFirePot)

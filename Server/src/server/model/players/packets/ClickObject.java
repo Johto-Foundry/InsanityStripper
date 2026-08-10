@@ -79,16 +79,6 @@ public class ClickObject implements PacketType {
 				case 8959:
 					c.objectYOffset = 1;
 				break;
-				case 4417:
-				if (c.objectX == 2425 && c.objectY == 3074)
-					c.objectYOffset = 2;
-				break;
-				case 4420:
-				if (c.getX() >= 2383 && c.getX() <= 2385){
-					c.objectYOffset = 1;
-				} else {
-					c.objectYOffset = -2;
-				}
 				case 6552:
 				case 409:
 					c.objectDistance = 2;
@@ -119,18 +109,6 @@ public class ClickObject implements PacketType {
 				case 9293:
 					c.objectDistance = 2;
 				break;
-				case 4418:
-				if (c.objectX == 2374 && c.objectY == 3131)
-					c.objectYOffset = -2;
-				else if (c.objectX == 2369 && c.objectY == 3126)
-					c.objectXOffset = 2;
-				else if (c.objectX == 2380 && c.objectY == 3127)
-					c.objectYOffset = 2;
-				else if (c.objectX == 2369 && c.objectY == 3126)
-					c.objectXOffset = 2;
-				else if (c.objectX == 2374 && c.objectY == 3131)
-					c.objectYOffset = -2;
-				break;
 				case 9706:
 					c.objectDistance = 0;
 					c.objectXOffset = 1;
@@ -138,9 +116,6 @@ public class ClickObject implements PacketType {
 				case 9707:
 					c.objectDistance = 0;
 					c.objectYOffset = -1;
-				break;
-				case 4419:
-					c.objectYOffset = 3;
 				break;
 				case 1276:
 				case 1278://trees
