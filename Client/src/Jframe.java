@@ -1,13 +1,11 @@
-import sign.signlink;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
-import javax.swing.plaf.metal.MetalLookAndFeel;
 
 
-public class Jframe extends client implements ActionListener {
+public class Jframe extends Client implements ActionListener {
 
     private static JMenuItem menuItem;
 	private JFrame frame;
@@ -70,7 +68,7 @@ public class Jframe extends client implements ActionListener {
 
 	public URL getCodeBase() {
 		try {
-			return new URL("http://" + server + "/cache");
+			return new URI("http://" + server + "/cache").toURL();
 		} catch (Exception e) {
 			return super.getCodeBase();
 		}

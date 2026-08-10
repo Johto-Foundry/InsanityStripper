@@ -1,4 +1,4 @@
 @echo off
 Title Project Insanity Client - Building...
-Javac -d bin src\ *.java
+Javac -Xlint:deprecation -Xlint:unchecked -classpath . -d bin src\*.java sign\*.java
 pause

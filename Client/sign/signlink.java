@@ -122,7 +122,7 @@ public final class signlink
                 try
                 {
                     System.out.println("urlstream");
-                    urlstream = new DataInputStream((new URL(mainapp.getCodeBase(), urlreq)).openStream());
+                    urlstream = new DataInputStream(mainapp.getCodeBase().toURI().resolve(urlreq).toURL().openStream());
                 }
                 catch(Exception _ex)
                 {

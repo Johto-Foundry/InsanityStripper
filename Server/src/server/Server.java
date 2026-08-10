@@ -202,8 +202,6 @@ public class Server {
 			System.out.println("Players online: " + PlayerHandler.playerCount+ ", engine load: "+ debugPercentFormat.format(engineLoad));
 			totalCycleTime = 0;
 			cycles = 0;
-			System.gc();
-			System.runFinalization();
 			debugTimer.reset();
 			playerExecuted = false;
 		}
