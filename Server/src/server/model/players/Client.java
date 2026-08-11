@@ -41,9 +41,7 @@ public class Client extends Player {
 	 * Skill instances
 	 */
 	private Slayer slayer = new Slayer(this);
-	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
-	private SmithingInterface smithInt = new SmithingInterface(this);
 	private int somejunk;
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;		
@@ -270,13 +268,7 @@ public class Client extends Player {
 	public int packetSize = 0, packetType = -1;
 	
 	public void process() {
-		if (smeltTimer > 0 && smeltType > 0) {
-			smeltTimer--;
-		} else if (smeltTimer == 0 && smeltType > 0) {
-			getSmithing().smelt(smeltType);
-		}
-		
-		if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
+if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
 			int damage = poisonDamage/2;
 			if (damage > 0) {
 				sendMessage("Applying poison damage.");
@@ -626,14 +618,7 @@ public class Client extends Player {
 	public Slayer getSlayer() {
 		return slayer;
 	}
-public Smithing getSmithing() {
-		return smith;
-	}
-public SmithingInterface getSmithingInt() {
-		return smithInt;
-	}
-	
-	public Prayer getPrayer() { 
+public Prayer getPrayer() { 
 		return prayer;
 	}
 /**

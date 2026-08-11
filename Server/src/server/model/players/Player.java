@@ -310,10 +310,6 @@ public int reduceSpellId;
 	
 	public int tutorial = 15;
 	public boolean usingGlory = false;
-	public int smeltType; //1 = bronze, 2 = iron, 3 = steel, 4 = gold, 5 = mith, 6 = addy, 7 = rune
-	public int smeltAmount;
-	public int smeltTimer = 0;
-	public boolean smeltInterface;
 	public boolean patchCleared;
 	public boolean antiFirePot = false;
 	

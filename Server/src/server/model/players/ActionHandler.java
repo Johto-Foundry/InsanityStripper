@@ -337,10 +337,7 @@ public class ActionHandler {
 			else
 				c.getPA().walkTo(0,-1);
 		break;
-		case 3044:
-			c.getSmithing().sendSmelting();
-		break;
-		case 733:
+case 733:
 			c.startAnimation(451);
 			/*if (Misc.random(1) == 1) {
 				c.getPA().removeObject(c.objectX, c.objectY);
@@ -367,10 +364,7 @@ public class ActionHandler {
 		//c.sendMessage("Object type: " + objectType);
 		switch(objectType) {
 			case 11666:
-			case 3044:
-				c.getSmithing().sendSmelting();
-			break;
-			case 2213:
+case 2213:
 			case 14367:
 			case 11758:
 				c.getPA().openUpBank();

@@ -160,56 +160,7 @@ case 150:
 						c.sendMessage("Only the owner of the clan has the power to do that.");
 				}	
 			break;
-case 15147:
-				if (c.smeltInterface) {
-					c.smeltType = 2349;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			
-			case 15151:
-				if (c.smeltInterface) {
-					c.smeltType = 2351;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			
-			
-			case 15159:
-				if (c.smeltInterface) {
-					c.smeltType = 2353;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			
-			
-			case 29017:
-				if (c.smeltInterface) {
-					c.smeltType = 2359;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			
-			case 29022:
-				if (c.smeltInterface) {
-					c.smeltType = 2361;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			
-			case 29026:
-				if (c.smeltInterface) {
-					c.smeltType = 2363;
-					c.smeltAmount = 1;
-					c.getSmithing().startSmelting(c.smeltType);
-				}
-			break;
-			case 58253:
+case 58253:
 			//c.getPA().showInterface(15106);
 			c.getItems().writeBonus();
 			break;

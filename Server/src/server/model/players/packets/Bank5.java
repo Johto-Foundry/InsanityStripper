@@ -51,13 +51,7 @@ public class Bank5 implements PacketType {
 			
 			case 1119:
 			case 1120:
-			case 1121:
-			case 1122:
-			case 1123:
-				c.getSmithing().readInput(c.playerLevel[c.playerSmithing], Integer.toString(removeId), c, 5);
-			break;
-			
-		}
+}
 	}
 
 }

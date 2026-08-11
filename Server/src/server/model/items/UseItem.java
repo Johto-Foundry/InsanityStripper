@@ -16,9 +16,6 @@ public class UseItem {
 		if (!c.getItems().playerHasItem(itemId, 1))
 			return;
 		switch(objectID) {
-			case 2783:
-				c.getSmithingInt().showSmithInterface(itemId);
-			break;
 case 409:
 				if (c.getPrayer().isBone(itemId))
 					c.getPrayer().bonesOnAltar(itemId);
@@ -35,17 +32,6 @@ case 409:
 		if (c.getItems().getItemName(itemUsed).contains("(") && c.getItems().getItemName(useWith).contains("("))
 			c.getPotMixing().mixPotion2(itemUsed, useWith);
 if (itemUsed == 53 || useWith == 53 || itemUsed == 52 || useWith == 52)
-if ((itemUsed == 1540 && useWith == 11286) || (itemUsed == 11286 && useWith == 1540)) {
-			if (c.playerLevel[c.playerSmithing] >= 95) {
-				c.getItems().deleteItem(1540, c.getItems().getItemSlot(1540), 1);
-				c.getItems().deleteItem(11286, c.getItems().getItemSlot(11286), 1);
-				c.getItems().addItem(11284,1);
-				c.sendMessage("You combine the two materials to create a dragonfire shield.");
-				c.getPA().addSkillXP(500 * Config.SMITHING_EXPERIENCE, c.playerSmithing);
-			} else {
-				c.sendMessage("You need a smithing level of 95 to create a dragonfire shield.");
-			}
-		}
 		if (itemUsed >= 11710 && itemUsed <= 11714 && useWith >= 11710 && useWith <= 11714) {
 			if (c.getItems().hasAllShards()) {
 				c.getItems().makeBlade();

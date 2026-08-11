@@ -1894,9 +1894,6 @@ public class PlayerAssistant{
 	
 	public void resetVariables() {
 		c.usingGlory = false;
-		c.smeltInterface = false;
-		c.smeltType = 0;
-		c.smeltAmount = 0;
 	}
 	
 	public int antiFire() {
