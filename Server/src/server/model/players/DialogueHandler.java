@@ -31,43 +31,11 @@ public class DialogueHandler {
 			c.dialogueAction = 1;
 			c.nextChat = 0;
 			break;
-case 5:
-			sendNpcChat4("Hello adventurer...", "My name is Kolodion, the master of this mage bank.", "Would you like to play a minigame in order ", 
-						"to earn points towards recieving magic related prizes?", c.talkingNpc, "Kolodion");
-			c.nextChat = 6;
-		break;
-		case 6:
-			sendNpcChat4("The way the game works is as follows...", "You will be teleported to the wilderness,", 
-			"You must kill mages to recieve points,","redeem points with the chamber guardian.", c.talkingNpc, "Kolodion");
-			c.nextChat = 15;
-		break;
-case 15:
-			sendOption2("Yes I would like to play", "No, sounds too dangerous for me.");
-			c.dialogueAction = 7;
-		break;
-		case 16:
+case 16:
 			sendOption2("Never mind.", "I would like to fix all my barrows");
 			c.dialogueAction = 8;
 		break;
-		case 17:
-			sendOption5("Air", "Mind", "Water", "Earth", "More");
-			c.dialogueAction = 10;
-			c.dialogueId = 17;
-			c.teleAction = -1;
-		break;
-		case 18:
-			sendOption5("Fire", "Body", "Cosmic", "Astral", "More");
-			c.dialogueAction = 11;
-			c.dialogueId = 18;
-			c.teleAction = -1;
-		break;
-		case 19:
-			sendOption5("Nature", "Law", "Death", "Blood", "More");
-			c.dialogueAction = 12;
-			c.dialogueId = 19;
-			c.teleAction = -1;
-		break;
-		}
+}
 	}
 	
 	/*

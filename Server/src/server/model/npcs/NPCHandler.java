@@ -1100,8 +1100,6 @@ newNPC.killerId = c.playerId;
 		//long start = System.currentTimeMillis();
 		Client c = (Client)Server.playerHandler.players[npcs[i].killedBy];
 		if(c != null) {
-			if (npcs[i].npcType == 912 || npcs[i].npcType == 913 || npcs[i].npcType == 914)
-				c.magePoints += 1;
 			if (NPCDrops.constantDrops.get(npcs[i].npcType) != null) {
 				for (int item : NPCDrops.constantDrops.get(npcs[i].npcType)) {
 					Server.itemHandler.createGroundItem(c, item, npcs[i].absX, npcs[i].absY, 1, c.playerId);

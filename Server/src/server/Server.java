@@ -95,13 +95,7 @@ public class Server {
 		//if(!Config.SERVER_DEBUG)
 			//VirtualWorld.init();
 		//WorldMap.loadWorldMap();	
-
-		/**
-		 * Script Loader
-		 */
-		//ScriptManager.loadScripts();
-		
-		/**
+/**
 		 * Accepting Connections
 		 */
 		acceptor = new SocketAcceptor();
@@ -122,8 +116,6 @@ public class Server {
 		EventManager.initialize();
 		Connection.initialize();
 		//PlayerSaving.initialize();
-		//MysqlManager.createConnection();
-		
 		/**
 		 * Server Successfully Loaded 
 		 */

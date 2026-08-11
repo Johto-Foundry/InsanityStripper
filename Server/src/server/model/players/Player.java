@@ -59,7 +59,6 @@ public abstract class Player {
 	privateChat, 
 	friendSlot = 0,
 	dialogueId, 
-newLocation, 
 	specEffect, 
 	specBarId, 
 	attackLevelReq, 
@@ -79,7 +78,6 @@ newLocation,
 	barrageCount = 0,
 	delayedDamage = 0,
 	delayedDamage2 = 0,
-	magePoints = 0,
 	desertTreasure = 0,
 	lastArrowUsed = -1,
 	clanId = -1,
@@ -95,7 +93,6 @@ newLocation,
 	killCount = 0;
 	public String clanName, properName;
 	public int[] itemKeptId = new int [4]; 
-	public final int[] POUCH_SIZE = {3,6,9,12};
 	public boolean[] invSlot = new boolean[28], equipSlot = new boolean[14];
 	public long friends[] = new long[200];
 	public double specAmount = 0;
@@ -307,7 +304,6 @@ public int reduceSpellId;
 	
 	public int tutorial = 15;
 	public boolean usingGlory = false;
-	public boolean patchCleared;
 	public boolean antiFirePot = false;
 	
 	

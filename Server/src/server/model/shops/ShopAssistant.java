@@ -127,10 +127,6 @@ public class ShopAssistant {
 		int ShopValue = (int)Math.floor(getItemShopValue(removeId, 0, removeSlot));
 		ShopValue *= 1.15;
 		String ShopAdd = "";
-		if (c.myShopId >= 17) {
-			c.sendMessage(c.getItems().getItemName(removeId)+": currently costs " + getSpecialItemValue(removeId) + " points.");
-			return;
-		}
 		if (ShopValue >= 1000 && ShopValue < 1000000) {
 			ShopAdd = " (" + (ShopValue / 1000) + "K)";
 		} else if (ShopValue >= 1000000) {
@@ -139,45 +135,7 @@ public class ShopAssistant {
 		c.sendMessage(c.getItems().getItemName(removeId)+": currently costs "+ShopValue+" coins"+ShopAdd);
 	}
 	
-	public int getSpecialItemValue(int id) {
-		switch (id) {
-			case 6889:
-			case 6914:
-			return 200;
-			case 6916:
-			case 6918:
-			case 6920:
-			case 6922:
-			case 6924:
-			return 50;
-			case 11663:
-			case 11664:
-			case 11665:
-			case 8842:
-			return 30;
-			case 8839:
-			case 8840:
-			return 75;
-			case 10499:
-			return 20;
-			case 8845:
-			return 5;
-			case 8846:
-			return 10;
-			case 8847:
-			return 15;
-			case 8848:
-			return 20;
-			case 8849:
-			case 8850:
-			return 25;
-			case 7462:
-			return 40;
-			case 10551:
-			return 100;
-		}
-		return 0;
-	}
+
 	
 	
 	
@@ -322,10 +280,6 @@ public class ShopAssistant {
 			int Slot = 0;
 			int Slot1 = 0;//Tokkul
 			int Slot2 = 0;//Pking Points
-			if (c.myShopId >= 17) {
-				handleOtherShop(itemID);
-				return false;
-			}	
 			for (int i = amount; i > 0; i--) {
 				TotPrice2 = (int)Math.floor(getItemShopValue(itemID, 0, fromSlot));
 				Slot = c.getItems().getItemSlot(995);
@@ -408,19 +362,7 @@ public class ShopAssistant {
 		return false;
 	}	
 	
-		public void handleOtherShop(int itemID) {
-			if (c.myShopId == 17) {
-				if (c.magePoints >= getSpecialItemValue(itemID)) {
-					if (c.getItems().freeSlots() > 0){
-						c.magePoints -= getSpecialItemValue(itemID);
-						c.getItems().addItem(itemID,1);	
-						c.getItems().resetItems(3823);
-					}
-				} else {
-					c.sendMessage("You do not have enough points to buy this item.");			
-				}
-			}
-		}
+
 		
 		public void openSkillCape() {
 			int capes = get99Count();

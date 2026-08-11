@@ -473,10 +473,6 @@ if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
 		if(teleTimer > 0) {
 			teleTimer--;
 			if (!isDead) {
-				if(teleTimer == 1 && newLocation > 0) {
-					teleTimer = 0;
-					getPA().changeLocation();
-				}
 				if(teleTimer == 5) {
 					teleTimer--;
 					getPA().processTeleport();

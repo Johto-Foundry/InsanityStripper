@@ -85,11 +85,6 @@ public class ObjectManager {
 	
 	private int[][] customObjects = {{}};
 	public void loadCustomSpawns(Client c) {
-		c.getPA().checkObjectSpawn(6163, 3083, 3488, 1, 10);
-		c.getPA().checkObjectSpawn(6165, 3083, 3490, 1, 10);
-		c.getPA().checkObjectSpawn(6166, 3083, 3492, 1, 10);
-		c.getPA().checkObjectSpawn(6164, 3083, 3494, 1, 10);
-		c.getPA().checkObjectSpawn(6162, 3083, 3496, 1, 10);
 		c.getPA().checkObjectSpawn(1596, 3008, 3850, 1, 0);
 		c.getPA().checkObjectSpawn(1596, 3008, 3849, -1, 0);
 		c.getPA().checkObjectSpawn(1596, 3040, 10307, -1, 0);
@@ -100,8 +95,6 @@ public class ObjectManager {
 		c.getPA().checkObjectSpawn(1596, 3044, 10342, 1, 0);
 		c.getPA().checkObjectSpawn(6552, 3094, 3506, 2, 10);
 		c.getPA().checkObjectSpawn(409, 3091, 3506, 2, 10);
-		c.getPA().checkObjectSpawn(2213, 3047, 9779, 1, 10);
-		c.getPA().checkObjectSpawn(2213, 3080, 9502, 1, 10);
 		if (c.heightLevel == 0)
 			c.getPA().checkObjectSpawn(2492, 2911, 3614, 1, 10);
 		else

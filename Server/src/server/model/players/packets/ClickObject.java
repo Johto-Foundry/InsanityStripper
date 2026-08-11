@@ -142,14 +142,7 @@ public class ClickObject implements PacketType {
 			}
 			
 			switch(c.objectId) {
-			case 6163:
-			case 6165:
-			case 6166:
-			case 6164:
-			case 6162:
-				c.objectDistance = 2;
-			break;
-				default:
+default:
 				c.objectDistance = 1;
 				c.objectXOffset = 0;
 				c.objectYOffset = 0;

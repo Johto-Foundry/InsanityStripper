@@ -88,8 +88,6 @@ public class PlayerSave
 					} else if (token.equals("teleblock-length")) {
 						p.teleBlockDelay = System.currentTimeMillis();
 						p.teleBlockLength = Integer.parseInt(token2);					
-					} else if (token.equals("magePoints")) {
-						p.magePoints = Integer.parseInt(token2);					
 					} else if (token.equals("autoRet")) {
 						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("flagged")) {
@@ -231,9 +229,6 @@ characterfile.write("special-amount = ", 0, 17);
 			characterfile.write(Integer.toString(tbTime), 0, Integer.toString(tbTime).length());
 			characterfile.newLine();
 
-			characterfile.write("magePoints = ", 0, 13);
-			characterfile.write(Integer.toString(p.magePoints), 0, Integer.toString(p.magePoints).length());
-			characterfile.newLine();
 			characterfile.write("autoRet = ", 0, 10);
 			characterfile.write(Integer.toString(p.autoRet), 0, Integer.toString(p.autoRet).length());
 			characterfile.newLine();

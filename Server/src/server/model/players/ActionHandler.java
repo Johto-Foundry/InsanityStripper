@@ -4,8 +4,6 @@ import server.Config;
 import server.Server;
 import server.model.objects.Object;
 import server.util.Misc;
-import server.util.ScriptManager;
-
 public class ActionHandler {
 	
 	private Client c;
@@ -353,7 +351,6 @@ case 733:
 		break;
 		
 		default:
-			ScriptManager.callFunc("objectClick1_"+objectType, c, objectType, obX, obY);
 			break;
 
 		}
@@ -403,7 +400,6 @@ case 2558:
 				}
 			break;
 		default:
-			ScriptManager.callFunc("objectClick2_"+objectType, c, objectType, obX, obY);
 			break;
 		}
 	}
@@ -414,7 +410,6 @@ case 2558:
 		c.sendMessage("Object type: " + objectType);
 		switch(objectType) {
 		default:
-			ScriptManager.callFunc("objectClick3_"+objectType, c, objectType, obX, obY);
 			break;
 		}
 	}
@@ -425,9 +420,6 @@ case 2558:
 		switch(npcType) {
 			case 706:
 				c.getDH().sendDialogues(9, npcType);
-			break;
-			case 2258:
-				c.getDH().sendDialogues(17, npcType);
 			break;
 case 541:
 				c.getShops().openShop(5);
@@ -448,14 +440,7 @@ case 541:
 			case 2538:
 				c.getShops().openShop(6);
 			break;
-			
-			case 519:
-				c.getShops().openShop(8);
-			break;
-			case 1282:
-				c.getShops().openShop(7);
-			break;
-			case 1152:
+case 1152:
 				c.getDH().sendDialogues(16,npcType);
 			break;
 			case 494:
@@ -464,10 +449,7 @@ case 541:
 			case 2566:
 				c.getShops().openSkillCape();
 			break;
-			case 905:
-				c.getDH().sendDialogues(5, npcType);
-			break;
-			case 460:
+case 460:
 				c.getDH().sendDialogues(3, npcType);
 			break;
 			case 462:
@@ -481,11 +463,7 @@ case 522:
 				c.getPA().showInterface(3559);
 				c.canChangeAppearance = true;
 			break;
-			case 904:
-				c.sendMessage("You have " + c.magePoints + " points.");
-			break;
-		default:
-			ScriptManager.callFunc("npcClick1_"+npcType, c, npcType);
+default:
 			if(c.playerRights == 3) 
 				Misc.println("First Click Npc : "+npcType);
 			break;
@@ -496,16 +474,10 @@ case 522:
 		c.clickNpcType = 0;
 		c.npcClickIndex = 0;
 		switch(npcType) {
-			case 1282:
-				c.getShops().openShop(7);
-			break;
 case 494:
 				c.getPA().openUpBank();
 			break;
-case 904:
-				c.getShops().openShop(17);
-			break;
-			case 522:
+case 522:
 			case 523:
 				c.getShops().openShop(1);
 			break;
@@ -528,16 +500,11 @@ case 904:
 			case 2538:
 				c.getShops().openShop(6);
 			break;
-			
-			case 519:
-				c.getShops().openShop(8);
-			break;
-			case 1:
+case 1:
 			case 9:
 			case 18:
 			case 20:
 default:
-				ScriptManager.callFunc("npcClick2_"+npcType, c, npcType);
 				if(c.playerRights == 3) 
 					Misc.println("Second Click Npc : "+npcType);
 				break;
@@ -550,7 +517,6 @@ default:
 		c.npcClickIndex = 0;
 		switch(npcType) {
 			default:
-				ScriptManager.callFunc("npcClick3_"+npcType, c, npcType);
 				if(c.playerRights == 3) 
 					Misc.println("Third Click NPC : "+npcType);
 				break;

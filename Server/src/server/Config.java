@@ -145,16 +145,6 @@ public class Config {
 	public static final int BUFFER_SIZE = 10000;
 	
 	/**
-	 * Slayer Variables
-	 */
-	public static final int[][] SLAYER_TASKS = {{1,87,90,4,5}, //low tasks
-												{6,7,8,9,10}, //med tasks
-												{11,12,13,14,15}, //high tasks
-												{1,1,15,20,25}, //low reqs
-												{30,35,40,45,50}, //med reqs
-												{60,75,80,85,90}}; //high reqs
-	
-	/**
 	* Skill Experience Multipliers
 	*/	
 }

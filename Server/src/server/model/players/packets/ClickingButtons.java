@@ -38,24 +38,8 @@ case 150:
 				} else if (c.teleAction == 4) {
 					//varrock wildy
 					c.getPA().spellTeleport(3243, 3513, 0);
-				} else if (c.teleAction == 5) {
-					c.getPA().spellTeleport(3046,9779,0);
-				}
-				
-				if (c.dialogueAction == 10) {
-					c.getPA().spellTeleport(2845, 4832, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 11) {
-					c.getPA().spellTeleport(2786, 4839, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 12) {
-					c.getPA().spellTeleport(2398, 4841, 0);
-					c.dialogueAction = -1;
 				}
 				break;
-				//mining - 3046,9779,0
-			//smithing - 3079,9502,0
-
 			//2nd tele option
 			case 9191:
 				if (c.teleAction == 1) {
@@ -67,87 +51,44 @@ case 150:
 				} else if (c.teleAction == 4) {
 					//graveyard
 					c.getPA().spellTeleport(3164, 3685, 0);
-				} else if (c.teleAction == 5) {
-					c.getPA().spellTeleport(3079,9502,0);
-				}
-				if (c.dialogueAction == 10) {
-					c.getPA().spellTeleport(2796, 4818, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 11) {
-					c.getPA().spellTeleport(2527, 4833, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 12) {
-					c.getPA().spellTeleport(2464, 4834, 0);
-					c.dialogueAction = -1;
 				}
 				break;
 			//3rd tele option	
 
 			case 9192:
 				if (c.teleAction == 1) {
-					//slayer tower
-					c.getPA().spellTeleport(3428, 3537, 0);
+					//brimhaven dungeon
+					c.getPA().spellTeleport(2710, 9466, 0);
 				} else if (c.teleAction == 3) {
 					//dag kings
 					c.getPA().spellTeleport(2479, 10147, 0);
 				} else if (c.teleAction == 4) {
 					//44 portals
 					c.getPA().spellTeleport(2975, 3873, 0);
-				} else if (c.teleAction == 5) {
-					c.getPA().spellTeleport(2813,3436,0);
-				}
-				if (c.dialogueAction == 10) {
-					c.getPA().spellTeleport(2713, 4836, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 11) {
-					c.getPA().spellTeleport(2162, 4833, 0);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 12) {
-					c.getPA().spellTeleport(2207, 4836, 0);
-					c.dialogueAction = -1;
 				}
 				break;
 			//4th tele option
 			case 9193:
 				if (c.teleAction == 1) {
-					//brimhaven dungeon
-					c.getPA().spellTeleport(2710, 9466, 0);
+					//island
+					c.getPA().spellTeleport(2895, 2727, 0);
 				} else if (c.teleAction == 3) {
 					//chaos elemental
 					c.getPA().spellTeleport(3295, 3921, 0);
 				} else if (c.teleAction == 4) {
 					//gdz
 					c.getPA().spellTeleport(3288, 3886, 0);
-				} else if (c.teleAction == 5) {
-					c.getPA().spellTeleport(2724,3484,0);
-					c.sendMessage("For magic logs, try north of the duel arena.");
-				}
-				if (c.dialogueAction == 10) {
-					c.getPA().spellTeleport(2660, 4839, 0);
-					c.dialogueAction = -1;
 				}
 				break;
 			//5th tele option
 			case 9194:
-				if (c.teleAction == 1) {
-					//island
-					c.getPA().spellTeleport(2895, 2727, 0);
-				} else if (c.teleAction == 3) {
+				if (c.teleAction == 3) {
 					//last monster spot
 					c.sendMessage("Suggest something for this spot on the forums!");
 					c.getPA().closeAllWindows();
 				} else if (c.teleAction == 4) {
 					//ardy lever
 					c.getPA().spellTeleport(2561, 3311, 0);
-				} else if (c.teleAction == 5) {
-					c.getPA().spellTeleport(2812,3463,0);
-				}
-				if (c.dialogueAction == 10 || c.dialogueAction == 11) {
-					c.dialogueId++;
-					c.getDH().sendDialogues(c.dialogueId, 0);
-				} else if (c.dialogueAction == 12) {
-					c.dialogueId = 17;
-					c.getDH().sendDialogues(c.dialogueId, 0);
 				}
 				break;
 			
@@ -265,9 +206,6 @@ case 58253:
 			case 9157:
 				if (c.dialogueAction == 2) {
 					c.getPA().movePlayer(2507, 4717, 0);
-				} else if (c.dialogueAction == 7) {
-					c.getPA().startTeleport(3088,3933,0,"modern");
-					c.sendMessage("NOTE: You are now in the wilderness...");
 				}
 				c.dialogueAction = 0;
 				c.getPA().removeAllWindows();
@@ -580,7 +518,7 @@ case 58253:
 			case 50235:
 			case 4140:
 			//c.getPA().startTeleport(Config.LUMBY_X, Config.LUMBY_Y, 0, "modern");
-			c.getDH().sendOption5("Rock Crabs", "Taverly Dungeon", "Slayer Tower", "Brimhaven Dungeon", "Island");
+			c.getDH().sendOption5("Rock Crabs", "Taverly Dungeon", "Brimhaven Dungeon", "Island", "Coming Soon");
 			c.teleAction = 1;
 			break;
 			
@@ -601,35 +539,7 @@ case 58253:
 			c.getDH().sendOption5("Varrock Wild", "Graveyard", "44 Portals", "Greater Demons", "Ardy Lever");
 			c.teleAction = 4;
 			break;			
-			
-			case 51013:
-			case 6004:
-			c.getDH().sendOption5("Mining", "Smithing", "Fishing/Cooking", "Woodcutting", "Farming");
-			c.teleAction = 5;
-			break; 
-			
-			
-			case 51023:
-			case 6005:
-			//c.getDH().sendOption5("Option 16", "Option 2", "Option 3", "Option 4", "Option 5");
-			//c.teleAction = 6;
-			break; 
-			
-			
-			case 51031:
-			case 29031:
-			//c.getDH().sendOption5("Option 17", "Option 2", "Option 3", "Option 4", "Option 5");
-			//c.teleAction = 7;
-			break; 		
-
-			case 72038:
-			case 51039:
-			//c.getDH().sendOption5("Option 18", "Option 2", "Option 3", "Option 4", "Option 5");
-			//c.teleAction = 8;
-			break;
-			
-	                 
-			case 9125: //Accurate
+case 9125: //Accurate
 			case 6221: // range accurate
 			case 22228: //punch (unarmed)
 			case 48010: //flick (whip)
