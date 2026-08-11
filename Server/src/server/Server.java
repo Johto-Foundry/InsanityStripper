@@ -81,6 +81,7 @@ public class Server {
         return I.I(height,absX,absY,toAbsX,toAbsY,type);
     }*/
 	public static void main(java.lang.String args[]) throws NullPointerException, IOException {
+		final long startupStart = System.nanoTime();
 		/**
 		 * Starting Up Server
 		 */
@@ -98,6 +99,7 @@ public class Server {
 /**
 		 * Accepting Connections
 		 */
+		final long networkStart = System.nanoTime();
 		acceptor = new SocketAcceptor();
 		connectionHandler = new ConnectionHandler();
 		
@@ -109,16 +111,23 @@ public class Server {
 		throttleFilter = new ConnectionThrottleFilter(Config.CONNECTION_DELAY);
 		sac.getFilterChain().addFirst("throttleFilter", throttleFilter);
 		acceptor.bind(new InetSocketAddress(serverlistenerPort), connectionHandler, sac);
+		final long networkTime = System.nanoTime() - networkStart;
 
 		/**
 		 * Initialise Handlers
 		 */
+		final long handlersStart = System.nanoTime();
 		EventManager.initialize();
 		Connection.initialize();
+		final long handlersTime = System.nanoTime() - handlersStart;
 		//PlayerSaving.initialize();
 		/**
 		 * Server Successfully Loaded 
 		 */
+		final long startupTime = System.nanoTime() - startupStart;
+		System.out.println("[Startup] Network/listener: " + String.format("%.3f", networkTime / 1_000_000.0) + " ms");
+		System.out.println("[Startup] Handler init:      " + String.format("%.3f", handlersTime / 1_000_000.0) + " ms");
+		System.out.println("[Startup] Server ready:      " + String.format("%.3f", startupTime / 1_000_000.0) + " ms");
 		System.out.println("Server listening on port 0.0.0.0:" + serverlistenerPort);
 		/**
 		 * Main Server Tick
