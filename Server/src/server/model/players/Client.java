@@ -42,7 +42,6 @@ public class Client extends Player {
 	 */
 	private Slayer slayer = new Slayer(this);
 	private Woodcutting woodcutting = new Woodcutting(this);
-	private Mining mine = new Mining(this);
 	private Cooking cooking = new Cooking(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
@@ -279,10 +278,6 @@ public class Client extends Player {
 			wcTimer--;
 		} else if (wcTimer == 0 && woodcut[0] > 0) {
 			getWoodcutting().cutWood();
-		} else if (miningTimer > 0 && mining[0] > 0) {
-			miningTimer--;
-		} else if (miningTimer == 0 && mining[0] > 0) {
-			getMining().mineOre();
 		} else  if (smeltTimer > 0 && smeltType > 0) {
 			smeltTimer--;
 		} else if (smeltTimer == 0 && smeltType > 0) {
@@ -642,12 +637,7 @@ public class Client extends Player {
 public Woodcutting getWoodcutting() {
 		return woodcutting;
 	}
-	
-	public Mining getMining() {
-		return mine;
-	}
-	
-	public Cooking getCooking() {
+public Cooking getCooking() {
 		return cooking;
 	}
 public Smithing getSmithing() {

@@ -1898,7 +1898,6 @@ public class PlayerAssistant{
 		c.smeltType = 0;
 		c.smeltAmount = 0;
 		c.woodcut[0] = c.woodcut[1] = c.woodcut[2] = 0;
-		c.mining[0] = c.mining[1] = c.mining[2] = 0;
 	}
 	
 	public int antiFire() {
