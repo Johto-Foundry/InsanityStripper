@@ -88,9 +88,6 @@ newLocation,
 	xInterfaceId = 0,
 	xRemoveId = 0,
 	xRemoveSlot = 0,
-	tzhaarToKill = 0,
-	tzhaarKilled = 0,
-	waveId,
 	frozenBy = 0,
 	poisonDamage = 0,
 	teleAction = 0,
@@ -397,12 +394,6 @@ public int reduceSpellId;
 		}
 		return false;
 	}
-	
-	public boolean inFightCaves()
-    {
-        return absX >= 2360 && absX <= 2445 && absY >= 5045 && absY <= 5125;
-    }
-	
 	public boolean inPirateHouse() {
 		return absX >= 3038 && absX <= 3044 && absY >= 3949 && absY <= 3959;
 	}

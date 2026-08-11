@@ -96,9 +96,6 @@ public class ClickObject implements PacketType {
 					if (c.absX < c.objectX && c.objectX == 3038)
 						c.objectXOffset = -1;
 				break;
-				case 9356:
-					c.objectDistance = 2;
-				break;
 				case 5959:
 				case 1815:
 				case 5960:

@@ -82,21 +82,12 @@ public class ActionHandler {
 			//ardy lever
 			c.getPA().startTeleport(3153, 3923, 0, "modern");
 		break;
-		
-		case 9356:
-			//c.getPA().enterCaves();
-			c.sendMessage("Temporarily removed due to bugs.");
-		break;
 		case 1733:
 			c.getPA().movePlayer(c.absX, c.absY + 6393, 0);
 		break;
 		
 		case 1734:
 			c.getPA().movePlayer(c.absX, c.absY - 6396, 0);
-		break;
-		
-		case 9357:
-			c.getPA().resetTzhaar();
 		break;
 		
 		case 8959:

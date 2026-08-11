@@ -61,7 +61,6 @@ public class Server {
 	public static FightPits fightPits = new FightPits();
 	public static NPCDrops npcDrops = new NPCDrops();
 	public static ClanChatHandler clanChat = new ClanChatHandler();
-	public static FightCaves fightCaves = new FightCaves();
 	//public static WorldMap worldMap = new WorldMap();
 	//private static final WorkerThread engine = new WorkerThread();
 	

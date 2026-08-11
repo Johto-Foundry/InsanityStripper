@@ -98,8 +98,6 @@ public class PlayerSave
 						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
-					} else if (token.equals("wave")) {
-						p.waveId = Integer.parseInt(token2);
 					} else if (token.equals("void")) {
 						for (int j = 0; j < token3.length; j++) {
 							p.voidStatus[j] = Integer.parseInt(token3[j]);						
@@ -255,9 +253,6 @@ characterfile.write("special-amount = ", 0, 17);
 
 			characterfile.write("flagged = ", 0, 10);
 			characterfile.write(Boolean.toString(p.accountFlagged), 0, Boolean.toString(p.accountFlagged).length());
-			characterfile.newLine();
-			characterfile.write("wave = ", 0, 7);
-			characterfile.write(Integer.toString(p.waveId), 0, Integer.toString(p.waveId).length());
 			characterfile.newLine();
 			characterfile.write("gwkc = ", 0, 7);
 			characterfile.write(Integer.toString(p.killCount), 0, Integer.toString(p.killCount).length());

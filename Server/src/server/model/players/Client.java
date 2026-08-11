@@ -772,18 +772,6 @@ public class Client extends Player {
 	
 	
 	public void correctCoordinates() {
-		if (inFightCaves()) {
-			getPA().movePlayer(absX, absY, playerId * 4);
-			sendMessage("Your wave will start in 10 seconds.");
-			EventManager.getSingleton().addEvent(new Event() {
-				public void execute(EventContainer c) {
-					Server.fightCaves.spawnNextWave((Client)Server.playerHandler.players[playerId]);
-					c.stop();
-				}
-				}, 10000);
-		
-		}
-	
 	}
-	
+
 }

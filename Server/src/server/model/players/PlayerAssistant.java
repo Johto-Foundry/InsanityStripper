@@ -881,7 +881,7 @@ public class PlayerAssistant{
 		c.faceUpdate(-1);
 		c.freezeTimer = 0;
 		if(c.duelStatus <= 4 && !c.getPA().inPitsWait()) { // if we are not in a duel we must be in wildy so remove items
-			if (!c.inPits && !c.inFightCaves()) {
+			if (!c.inPits) {
 					c.getItems().resetKeepItems();
 				if((c.playerRights == 2 && Config.ADMIN_DROP_ITEMS) || c.playerRights != 2) {
 					if(!c.isSkulled) {	// what items to keep
@@ -926,8 +926,6 @@ public class PlayerAssistant{
 			c.isSkulled = false;
 			c.skullTimer = 0;
 			c.attackedPlayers.clear();
-		} else if (c.inFightCaves()) {
-			c.getPA().resetTzhaar();
 		} else { // we are in a duel, respawn outside of arena
 			Client o = (Client) Server.playerHandler.players[c.duelingWith];
 			if(o != null) {
@@ -2012,21 +2010,6 @@ public class PlayerAssistant{
 				}
 		}
 		return killer;
-	}
-	
-	public void resetTzhaar() {
-		c.waveId = -1;
-		c.tzhaarToKill = -1;
-		c.tzhaarKilled = -1;	
-		c.getPA().movePlayer(2438,5168,0);
-	}
-	
-	public void enterCaves() {
-		c.getPA().movePlayer(2413,5117, c.playerId * 4);
-		c.waveId = 0;
-		c.tzhaarToKill = -1;
-		c.tzhaarKilled = -1;
-		Server.fightCaves.spawnNextWave(c);
 	}
 	
 	public void appendPoison(int damage) {

@@ -125,7 +125,7 @@ public class NPCHandler {
 			if (Server.playerHandler.players[j] != null) {
 				if (j == npcs[i].spawnedBy)
 					return j;
-				if (goodDistance(Server.playerHandler.players[j].absX, Server.playerHandler.players[j].absY, npcs[i].absX, npcs[i].absY, 2 + distanceRequired(i) + followDistance(i)) || isFightCaveNpc(i)) {
+				if (goodDistance(Server.playerHandler.players[j].absX, Server.playerHandler.players[j].absY, npcs[i].absX, npcs[i].absY, 2 + distanceRequired(i) + followDistance(i))) {
 					if ((Server.playerHandler.players[j].underAttackBy <= 0 && Server.playerHandler.players[j].underAttackBy2 <= 0) || Server.playerHandler.players[j].inMulti())
 						if (Server.playerHandler.players[j].heightLevel == npcs[i].heightLevel)
 							return j;
@@ -139,7 +139,7 @@ public class NPCHandler {
 		ArrayList<Integer> players = new ArrayList<Integer>();
 		for (int j = 0; j < Server.playerHandler.players.length; j++) {
 			if (Server.playerHandler.players[j] != null) {
-				if (goodDistance(Server.playerHandler.players[j].absX, Server.playerHandler.players[j].absY, npcs[i].absX, npcs[i].absY, 2 + distanceRequired(i) + followDistance(i)) || isFightCaveNpc(i)) {
+				if (goodDistance(Server.playerHandler.players[j].absX, Server.playerHandler.players[j].absY, npcs[i].absX, npcs[i].absY, 2 + distanceRequired(i) + followDistance(i))) {
 					if ((Server.playerHandler.players[j].underAttackBy <= 0 && Server.playerHandler.players[j].underAttackBy2 <= 0) || Server.playerHandler.players[j].inMulti())
 						if (Server.playerHandler.players[j].heightLevel == npcs[i].heightLevel)
 							players.add(j);
@@ -185,23 +185,9 @@ public class NPCHandler {
 		}
 		if (npcs[i].inWild() && npcs[i].MaxHP > 0)
 			return true;
-		if (isFightCaveNpc(i))
-			return true;
 		return false;
 	}
 	
-	public boolean isFightCaveNpc(int i) {
-		switch (npcs[i].npcType) {
-			case 2627:
-			case 2630:
-			case 2631:
-			case 2741:
-			case 2743: 
-			case 2745:
-			return true;		
-		}
-		return false;
-	}
 	
 	/**
 	* Summon npc
@@ -1008,8 +994,6 @@ newNPC.killerId = c.playerId;
 						npcs[i].animUpdateRequired = true;
 						npcs[i].freezeTimer = 0;
 						npcs[i].applyDead = true;
-						if (isFightCaveNpc(i))
-							killedTzhaar(i);
 						npcs[i].actionTimer = 4; // delete time
 						resetPlayersInCombat(i);
 					} else if (npcs[i].actionTimer == 0 && npcs[i].applyDead == true &&  npcs[i].needRespawn == false) {						
@@ -1026,9 +1010,6 @@ newNPC.killerId = c.playerId;
 						npcs[i].animUpdateRequired = true;
 						if (npcs[i].npcType >= 2440 && npcs[i].npcType <= 2446) {
 							Server.objectManager.removeObject(npcs[i].absX, npcs[i].absY);
-						}
-						if (npcs[i].npcType == 2745) {
-							handleJadDeath(i);
 						}
 					} else if (npcs[i].actionTimer == 0 && npcs[i].needRespawn == true) {					
 						if(npcs[i].spawnedBy > 0) {
@@ -1105,34 +1086,6 @@ newNPC.killerId = c.playerId;
 	/**
 	 * 
 	 */
-
-	private void killedTzhaar(int i) {
-		final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
-		c2.tzhaarKilled++;
-		//System.out.println("To kill: " + c2.tzhaarToKill + " killed: " + c2.tzhaarKilled);
-		if (c2.tzhaarKilled == c2.tzhaarToKill) {
-			//c2.sendMessage("STARTING EVENT");
-			c2.waveId++;
-			EventManager.getSingleton().addEvent(new Event() {
-				public void execute(EventContainer c) {
-					if (c2 != null) {
-						Server.fightCaves.spawnNextWave(c2);
-					}	
-					c.stop();
-				}
-			}, 7500);
-			
-		}
-	}
-	
-	public void handleJadDeath(int i) {
-		Client c = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
-		c.getItems().addItem(6570,1);
-		c.sendMessage("Congratulations on completing the fight caves minigame!");
-		c.getPA().resetTzhaar();
-		c.waveId = 300;
-	}
-	
 
 	/**
 	* Dropping Items!
@@ -1878,7 +1831,7 @@ newNPC.killerId = c.playerId;
 					if (c.playerLevel[3] - damage < 0) { 
 						damage = c.playerLevel[3];
 					}
-					if(npcs[i].endGfx > 0 && (!magicFailed || isFightCaveNpc(i))) {
+					if(npcs[i].endGfx > 0 && (!magicFailed)) {
 						c.gfx100(npcs[i].endGfx);
 					} else {
 						c.gfx100(85);
