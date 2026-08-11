@@ -21,8 +21,7 @@ public class ClickingButtons implements PacketType {
 		if(c.playerRights == 3)	
 			Misc.println(c.playerName+ " - actionbutton: "+actionButtonId);
 		switch (actionButtonId){
-			//fletching interface:
-			case 150:
+case 150:
 				if (c.autoRet == 0)
 					c.autoRet = 1;
 				else 
@@ -169,12 +168,7 @@ public class ClickingButtons implements PacketType {
 						c.sendMessage("Only the owner of the clan has the power to do that.");
 				}	
 			break;
-			case 34185: case 34184: case 34183: case 34182: case 34189: case 34188: case 34187: case 34186: case 34193: case 34192: case 34191: case 34190:
-				if (c.getFletching().fletching)
-					c.getFletching().handleFletchingClick(actionButtonId);
-			break;
-			
-			case 15147:
+case 15147:
 				if (c.smeltInterface) {
 					c.smeltType = 2349;
 					c.smeltAmount = 1;

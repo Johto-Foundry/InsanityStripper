@@ -48,7 +48,6 @@ public class Client extends Player {
 	private Fishing fish = new Fishing(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
-	private Fletching fletching = new Fletching(this);
 	private SmithingInterface smithInt = new SmithingInterface(this);
 	private Farming farming = new Farming(this);
 	private Thieving thieving = new Thieving(this);
@@ -697,12 +696,7 @@ public Smithing getSmithing() {
 	public Prayer getPrayer() { 
 		return prayer;
 	}
-	
-	public Fletching getFletching() { 
-		return fletching;
-	}
-	
-	/**
+/**
 	 * End of Skill Constructors
 	 */
 	

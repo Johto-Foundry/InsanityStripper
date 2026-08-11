@@ -44,11 +44,8 @@ public class UseItem {
 			c.getHerblore().handlePotMaking(itemUsed,useWith);
 		if (c.getItems().getItemName(itemUsed).contains("(") && c.getItems().getItemName(useWith).contains("("))
 			c.getPotMixing().mixPotion2(itemUsed, useWith);
-		if (itemUsed == 946 || useWith == 946)
-			c.getFletching().handleLog(itemUsed,useWith);
-		if (itemUsed == 53 || useWith == 53 || itemUsed == 52 || useWith == 52)
-			c.getFletching().makeArrows(itemUsed, useWith);
-		if ((itemUsed == 1540 && useWith == 11286) || (itemUsed == 11286 && useWith == 1540)) {
+if (itemUsed == 53 || useWith == 53 || itemUsed == 52 || useWith == 52)
+if ((itemUsed == 1540 && useWith == 11286) || (itemUsed == 11286 && useWith == 1540)) {
 			if (c.playerLevel[c.playerSmithing] >= 95) {
 				c.getItems().deleteItem(1540, c.getItems().getItemSlot(1540), 1);
 				c.getItems().deleteItem(11286, c.getItems().getItemSlot(11286), 1);
@@ -57,106 +54,6 @@ public class UseItem {
 				c.getPA().addSkillXP(500 * Config.SMITHING_EXPERIENCE, c.playerSmithing);
 			} else {
 				c.sendMessage("You need a smithing level of 95 to create a dragonfire shield.");
-			}
-		}
-		if (itemUsed == 9142 && useWith == 9190 || itemUsed == 9190 && useWith == 9142) {
-			if (c.playerLevel[c.playerFletching] >= 58) {
-				int boltsMade = c.getItems().getItemAmount(itemUsed) > c.getItems().getItemAmount(useWith) ? c.getItems().getItemAmount(useWith) : c.getItems().getItemAmount(itemUsed);
-				c.getItems().deleteItem(useWith, c.getItems().getItemSlot(useWith), boltsMade);
-				c.getItems().deleteItem(itemUsed, c.getItems().getItemSlot(itemUsed), boltsMade);
-				c.getItems().addItem(9241, boltsMade);
-				c.getPA().addSkillXP(boltsMade * 6 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 58 to fletch this item.");
-			}
-		}
-		if (itemUsed == 9143 && useWith == 9191 || itemUsed == 9191 && useWith == 9143) {
-			if (c.playerLevel[c.playerFletching] >= 63) {
-				int boltsMade = c.getItems().getItemAmount(itemUsed) > c.getItems().getItemAmount(useWith) ? c.getItems().getItemAmount(useWith) : c.getItems().getItemAmount(itemUsed);
-				c.getItems().deleteItem(useWith, c.getItems().getItemSlot(useWith), boltsMade);
-				c.getItems().deleteItem(itemUsed, c.getItems().getItemSlot(itemUsed), boltsMade);
-				c.getItems().addItem(9242, boltsMade);
-				c.getPA().addSkillXP(boltsMade * 7 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 63 to fletch this item.");
-			}		
-		}
-		if (itemUsed == 9143 && useWith == 9192 || itemUsed == 9192 && useWith == 9143) {
-			if (c.playerLevel[c.playerFletching] >= 65) {
-				int boltsMade = c.getItems().getItemAmount(itemUsed) > c.getItems().getItemAmount(useWith) ? c.getItems().getItemAmount(useWith) : c.getItems().getItemAmount(itemUsed);
-				c.getItems().deleteItem(useWith, c.getItems().getItemSlot(useWith), boltsMade);
-				c.getItems().deleteItem(itemUsed, c.getItems().getItemSlot(itemUsed), boltsMade);
-				c.getItems().addItem(9243, boltsMade);
-				c.getPA().addSkillXP(boltsMade * 7 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 65 to fletch this item.");
-			}		
-		}
-		if (itemUsed == 9144 && useWith == 9193 || itemUsed == 9193 && useWith == 9144) {
-			if (c.playerLevel[c.playerFletching] >= 71) {
-				int boltsMade = c.getItems().getItemAmount(itemUsed) > c.getItems().getItemAmount(useWith) ? c.getItems().getItemAmount(useWith) : c.getItems().getItemAmount(itemUsed);
-				c.getItems().deleteItem(useWith, c.getItems().getItemSlot(useWith), boltsMade);
-				c.getItems().deleteItem(itemUsed, c.getItems().getItemSlot(itemUsed), boltsMade);
-				c.getItems().addItem(9244, boltsMade);
-				c.getPA().addSkillXP(boltsMade * 10 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 71 to fletch this item.");
-			}		
-		}
-		if (itemUsed == 9144 && useWith == 9194 || itemUsed == 9194 && useWith == 9144) {
-			if (c.playerLevel[c.playerFletching] >= 58) {
-				int boltsMade = c.getItems().getItemAmount(itemUsed) > c.getItems().getItemAmount(useWith) ? c.getItems().getItemAmount(useWith) : c.getItems().getItemAmount(itemUsed);
-				c.getItems().deleteItem(useWith, c.getItems().getItemSlot(useWith), boltsMade);
-				c.getItems().deleteItem(itemUsed, c.getItems().getItemSlot(itemUsed), boltsMade);
-				c.getItems().addItem(9245, boltsMade);
-				c.getPA().addSkillXP(boltsMade * 13 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 58 to fletch this item.");
-			}		
-		}
-		if (itemUsed == 1601 && useWith == 1755 || itemUsed == 1755 && useWith == 1601) {
-			if (c.playerLevel[c.playerFletching] >= 63) {
-				c.getItems().deleteItem(1601, c.getItems().getItemSlot(1601), 1);
-				c.getItems().addItem(9192, 15);
-				c.getPA().addSkillXP(8 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 63 to fletch this item.");
-			}
-		}
-		if (itemUsed == 1607 && useWith == 1755 || itemUsed == 1755 && useWith == 1607) {
-			if (c.playerLevel[c.playerFletching] >= 65) {
-				c.getItems().deleteItem(1607, c.getItems().getItemSlot(1607), 1);
-				c.getItems().addItem(9189, 15);
-				c.getPA().addSkillXP(8 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 65 to fletch this item.");
-			}
-		}
-		if (itemUsed == 1605 && useWith == 1755 || itemUsed == 1755 && useWith == 1605) {
-			if (c.playerLevel[c.playerFletching] >= 71) {
-				c.getItems().deleteItem(1605, c.getItems().getItemSlot(1605), 1);
-				c.getItems().addItem(9190, 15);
-				c.getPA().addSkillXP(8 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 71 to fletch this item.");
-			}
-		}
-		if (itemUsed == 1603 && useWith == 1755 || itemUsed == 1755 && useWith == 1603) {
-			if (c.playerLevel[c.playerFletching] >= 73) {
-				c.getItems().deleteItem(1603, c.getItems().getItemSlot(1603), 1);
-				c.getItems().addItem(9191, 15);
-				c.getPA().addSkillXP(8 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 73 to fletch this item.");
-			}
-		}
-		if (itemUsed == 1615 && useWith == 1755 || itemUsed == 1755 && useWith == 1615) {
-			if (c.playerLevel[c.playerFletching] >= 73) {
-				c.getItems().deleteItem(1615, c.getItems().getItemSlot(1615), 1);
-				c.getItems().addItem(9193, 15);
-				c.getPA().addSkillXP(8 * Config.FLETCHING_EXPERIENCE, c.playerFletching);
-			} else {
-				c.sendMessage("You need a fletching level of 73 to fletch this item.");
 			}
 		}
 		if (itemUsed >= 11710 && itemUsed <= 11714 && useWith >= 11710 && useWith <= 11714) {
