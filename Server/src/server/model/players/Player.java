@@ -331,12 +331,6 @@ public int reduceSpellId;
 	
 	
 	/**
-	 * Fight Pits
-	 */
-	public boolean inPits = false;
-	public int pitsStatus = 0;
-	
-	/**
 	 * SouthWest, NorthEast, SouthWest, NorthEast
 	 */
 	

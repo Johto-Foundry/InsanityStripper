@@ -15,7 +15,6 @@ import server.model.players.PlayerHandler;
 import server.model.players.Player;
 import server.model.players.Client;
 import server.model.players.PlayerSave;
-import server.model.minigames.*;
 import server.net.ConnectionHandler;
 import server.net.ConnectionThrottleFilter;
 import server.util.SimpleTimer;
@@ -58,7 +57,6 @@ public class Server {
 	public static ShopHandler shopHandler = new ShopHandler();
 	public static ObjectHandler objectHandler = new ObjectHandler();
 	public static ObjectManager objectManager = new ObjectManager();
-	public static FightPits fightPits = new FightPits();
 	public static NPCDrops npcDrops = new NPCDrops();
 	public static ClanChatHandler clanChat = new ClanChatHandler();
 	//public static WorldMap worldMap = new WorldMap();
@@ -145,7 +143,6 @@ public class Server {
 	            npcHandler.process();
 				shopHandler.process();
 				objectManager.process();
-				fightPits.process();
 				cycleTime = engineTimer.elapsed();
 				sleepTime = cycleRate - cycleTime;
 				totalCycleTime += cycleTime;

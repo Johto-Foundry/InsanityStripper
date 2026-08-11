@@ -150,19 +150,6 @@ public class ActionHandler {
 			//Server.objectHandler.startObelisk(objectType);
 			Server.objectManager.startObelisk(objectType);
 		break;
-		case 9369:
-			if (c.getY() > 5175)
-				c.getPA().movePlayer(2399, 5175, 0);
-			else
-				c.getPA().movePlayer(2399, 5177, 0);
-		break;
-		
-		case 9368:
-			if (c.getY() < 5169) {
-				Server.fightPits.removePlayerFromPits(c.playerId);
-				c.getPA().movePlayer(2399, 5169, 0);
-			}	
-		break;
 		case 2286:
 		case 154:
 		case 4058:

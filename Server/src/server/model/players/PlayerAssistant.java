@@ -880,8 +880,7 @@ public class PlayerAssistant{
 		c.isDead = false;
 		c.faceUpdate(-1);
 		c.freezeTimer = 0;
-		if(c.duelStatus <= 4 && !c.getPA().inPitsWait()) { // if we are not in a duel we must be in wildy so remove items
-			if (!c.inPits) {
+		if(c.duelStatus <= 4) { // if we are not in a duel we must be in wildy so remove items
 					c.getItems().resetKeepItems();
 				if((c.playerRights == 2 && Config.ADMIN_DROP_ITEMS) || c.playerRights != 2) {
 					if(!c.isSkulled) {	// what items to keep
@@ -908,20 +907,14 @@ public class PlayerAssistant{
 						}
 					}
 				}
-				c.getItems().resetKeepItems();
-			} else if (c.inPits) {
-				Server.fightPits.removePlayerFromPits(c.playerId);
-				c.pitsStatus = 1;
-			}
+			c.getItems().resetKeepItems();
 		}
 		c.getCombat().resetPrayers();
 		for (int i = 0; i < 20; i++) {
 			c.playerLevel[i] = getLevelForXP(c.playerXP[i]);
 			c.getPA().refreshSkill(i);
 		}
-		if (c.pitsStatus == 1) {
-			movePlayer(2399, 5173, 0);
-		} else if(c.duelStatus <= 4) { // if we are not in a duel repawn to wildy
+		if(c.duelStatus <= 4) { // if we are not in a duel repawn to wildy
 			movePlayer(Config.RESPAWN_X, Config.RESPAWN_Y, 0);
 			c.isSkulled = false;
 			c.skullTimer = 0;
@@ -1908,10 +1901,6 @@ public class PlayerAssistant{
 		c.smeltAmount = 0;
 		c.woodcut[0] = c.woodcut[1] = c.woodcut[2] = 0;
 		c.mining[0] = c.mining[1] = c.mining[2] = 0;
-	}
-	
-	public boolean inPitsWait() {
-		return c.getX() <= 2404 && c.getX() >= 2394 && c.getY() <= 5175 && c.getY() >= 5169;
 	}
 	
 	public int antiFire() {

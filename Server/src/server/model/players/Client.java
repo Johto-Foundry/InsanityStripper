@@ -129,8 +129,6 @@ public class Client extends Player {
 		if(session == null) 
 			return;
 		//PlayerSaving.getSingleton().requestSave(playerId);
-		if (inPits)
-			Server.fightPits.removePlayerFromPits(playerId);
 		if (clanId >= 0)
 			Server.clanChat.leaveClan(playerId, clanId);
 		Misc.println("[DEREGISTERED]: "+playerName+"");
@@ -449,10 +447,6 @@ public class Client extends Player {
 			} else {
 				getPA().showOption(3, 0, "Challenge", 1);
 			}
-		} else if (inPits) {
-			getPA().showOption(3, 0, "Attack", 1);	
-		} else if (getPA().inPitsWait()) {
-			getPA().showOption(3, 0, "Null", 1);
 		} else {
 			getPA().sendFrame99(0);
 			getPA().walkableInterface(-1);
