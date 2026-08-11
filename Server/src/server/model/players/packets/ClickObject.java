@@ -32,11 +32,6 @@ public class ClickObject implements PacketType {
 				c.resetWalkingQueue();
 				break;
 			}
-			for (int i = 0; i < c.getRunecrafting().altarID.length; i++) {
-				if (c.objectId == c.getRunecrafting().altarID[i]) {
-					c.getRunecrafting().craftRunes(c.objectId);
-				}
-			}
 			switch(c.objectId) {
 				case 1733:
 					c.objectYOffset = 2;

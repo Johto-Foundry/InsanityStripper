@@ -95,7 +95,6 @@ newLocation,
 	killCount = 0;
 	public String clanName, properName;
 	public int[] itemKeptId = new int [4]; 
-	public int[] pouches = new int[4];
 	public final int[] POUCH_SIZE = {3,6,9,12};
 	public boolean[] invSlot = new boolean[28], equipSlot = new boolean[14];
 	public long friends[] = new long[200];

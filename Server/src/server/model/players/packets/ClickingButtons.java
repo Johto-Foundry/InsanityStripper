@@ -125,14 +125,6 @@ case 150:
 				if (c.dialogueAction == 10) {
 					c.getPA().spellTeleport(2660, 4839, 0);
 					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 11) {
-					//c.getPA().spellTeleport(2527, 4833, 0); astrals here
-					c.getRunecrafting().craftRunes(2489);
-					c.dialogueAction = -1;
-				} else if (c.dialogueAction == 12) {
-					//c.getPA().spellTeleport(2464, 4834, 0); bloods here
-					c.getRunecrafting().craftRunes(2489);
-					c.dialogueAction = -1;
 				}
 				break;
 			//5th tele option

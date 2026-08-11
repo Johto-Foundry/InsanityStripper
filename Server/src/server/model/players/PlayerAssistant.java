@@ -2016,42 +2016,7 @@ public class PlayerAssistant{
 		}
 		return false;	
 	}
-	
-	public void checkPouch(int i) {
-		if (i < 0)
-			return;
-		c.sendMessage("This pouch has " + c.pouches[i] + " rune ess in it.");		
-	}
-	
-	public void fillPouch(int i) {
-		if (i < 0)
-			return;
-		int toAdd = c.POUCH_SIZE[i] - c.pouches[i];
-		if (toAdd > c.getItems().getItemAmount(1436)) {
-			toAdd = c.getItems().getItemAmount(1436);
-		}
-		if (toAdd > c.POUCH_SIZE[i] - c.pouches[i])
-			toAdd = c.POUCH_SIZE[i] - c.pouches[i];
-		if (toAdd > 0) {
-			c.getItems().deleteItem(1436, toAdd);
-			c.pouches[i] += toAdd;
-		}		
-	}
-	
-	public void emptyPouch(int i) {
-		if (i < 0)
-			return;
-		int toAdd = c.pouches[i];
-		if (toAdd > c.getItems().freeSlots()) {
-			toAdd = c.getItems().freeSlots();
-		}
-		if (toAdd > 0) {
-			c.getItems().addItem(1436, toAdd);
-			c.pouches[i] -= toAdd;
-		}		
-	}
-	
-	public void fixAllBarrows() {
+public void fixAllBarrows() {
 		int totalCost = 0;
 		int cashAmount = c.getItems().getItemAmount(995);
 		for (int j = 0; j < c.playerItems.length; j++) {

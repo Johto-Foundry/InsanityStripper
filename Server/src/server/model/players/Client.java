@@ -41,7 +41,6 @@ public class Client extends Player {
 	 * Skill instances
 	 */
 	private Slayer slayer = new Slayer(this);
-	private Runecrafting runecrafting = new Runecrafting(this);
 	private Woodcutting woodcutting = new Woodcutting(this);
 	private Mining mine = new Mining(this);
 	private Cooking cooking = new Cooking(this);
@@ -647,12 +646,7 @@ public class Client extends Player {
 	public Slayer getSlayer() {
 		return slayer;
 	}
-	
-	public Runecrafting getRunecrafting() {
-		return runecrafting;
-	}
-	
-	public Woodcutting getWoodcutting() {
+public Woodcutting getWoodcutting() {
 		return woodcutting;
 	}
 	

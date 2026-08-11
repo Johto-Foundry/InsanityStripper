@@ -17,20 +17,6 @@ public class ClickItem implements PacketType {
 		if (itemId != c.playerItems[itemSlot] - 1) {
 			return;
 		}
-		if (itemId >= 5509 && itemId <= 5514) {
-			int pouch = -1;
-			int a = itemId;
-			if (a == 5509)
-				pouch = 0;
-			if (a == 5510)
-				pouch = 1;
-			if (a == 5512)
-				pouch = 2;
-			if (a == 5514)
-				pouch = 3;
-			c.getPA().fillPouch(pouch);
-			return;
-		}
 		if (c.getFood().isFood(itemId))
 			c.getFood().eat(itemId,itemSlot);
 		//ScriptManager.callFunc("itemClick_"+itemId, c, itemId, itemSlot);
