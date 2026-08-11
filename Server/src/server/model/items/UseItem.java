@@ -40,8 +40,6 @@ public class UseItem {
 	}
 
 	public static void ItemonItem(Client c, int itemUsed, int useWith) {
-		if (itemUsed == 227 || useWith == 227)
-			c.getHerblore().handlePotMaking(itemUsed,useWith);
 		if (c.getItems().getItemName(itemUsed).contains("(") && c.getItems().getItemName(useWith).contains("("))
 			c.getPotMixing().mixPotion2(itemUsed, useWith);
 if (itemUsed == 53 || useWith == 53 || itemUsed == 52 || useWith == 52)

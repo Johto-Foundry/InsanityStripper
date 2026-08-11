@@ -52,8 +52,6 @@ public class Client extends Player {
 	private Farming farming = new Farming(this);
 	private Thieving thieving = new Thieving(this);
 	private Firemaking firemaking = new Firemaking(this);
-	private Herblore herblore = new Herblore(this);
-	
 	private int somejunk;
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;		
@@ -680,12 +678,7 @@ public Smithing getSmithing() {
 	public Thieving getThieving() {
 		return thieving;
 	}
-	
-	public Herblore getHerblore() {
-		return herblore;
-	}
-	
-	public Firemaking getFiremaking() {
+public Firemaking getFiremaking() {
 		return firemaking;
 	}
 	

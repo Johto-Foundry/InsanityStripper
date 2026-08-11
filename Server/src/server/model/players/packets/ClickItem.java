@@ -31,8 +31,6 @@ public class ClickItem implements PacketType {
 			c.getPA().fillPouch(pouch);
 			return;
 		}
-		if (c.getHerblore().isUnidHerb(itemId))
-			c.getHerblore().handleHerbClick(itemId);
 		if (c.getFood().isFood(itemId))
 			c.getFood().eat(itemId,itemSlot);
 		//ScriptManager.callFunc("itemClick_"+itemId, c, itemId, itemSlot);
