@@ -91,7 +91,7 @@ public abstract class Player {
 	bonusAttack = 0,
 	lastNpcAttacked = 0,
 	killCount = 0;
-	public String clanName, properName;
+	public String properName;
 	public int[] itemKeptId = new int [4]; 
 	public boolean[] invSlot = new boolean[28], equipSlot = new boolean[14];
 	public long friends[] = new long[200];
@@ -99,8 +99,8 @@ public abstract class Player {
 	public double specAccuracy = 1;
 	public double specDamage = 1;
 	public double prayerPoint = 1.0;
-	public int teleGrabItem, teleGrabX, teleGrabY, duelCount, underAttackBy, underAttackBy2, wildLevel, teleTimer, respawnTimer, saveTimer = 0, teleBlockLength, poisonDelay;
-	public long lastPlayerMove,lastPoison,lastPoisonSip,poisonImmune,lastSpear,lastProtItem, dfsDelay, lastVeng,lastYell,teleGrabDelay, protMageDelay, protMeleeDelay, protRangeDelay, lastAction,lastLockPick, alchDelay, specDelay = System.currentTimeMillis(), duelDelay, teleBlockDelay, godSpellDelay, singleCombatDelay, singleCombatDelay2, reduceStat, restoreStatsDelay, logoutDelay, foodDelay, potDelay;
+	public int teleGrabItem, teleGrabX, teleGrabY, duelCount, underAttackBy, underAttackBy2, wildLevel, teleTimer, respawnTimer, saveTimer = 0, teleBlockLength;
+	public long lastPoison,lastPoisonSip,poisonImmune,lastSpear,lastProtItem, dfsDelay, lastVeng,teleGrabDelay, protMageDelay, protMeleeDelay, protRangeDelay, lastLockPick, alchDelay, specDelay = System.currentTimeMillis(), duelDelay, teleBlockDelay, godSpellDelay, singleCombatDelay, singleCombatDelay2, reduceStat, restoreStatsDelay, logoutDelay, foodDelay, potDelay;
 	public boolean canChangeAppearance = false;
 	public boolean mageAllowed;
 	public byte poisonMask = 0;
@@ -183,8 +183,6 @@ public abstract class Player {
 	public int[] autocastIds = {51133,32,51185,33,51091,34,24018,35,51159,36,51211,37,51111,38,51069,39,51146,40,51198,41,51102,42,51058,43,51172,44,51224,45,51122,46,51080,47,
 								7038,0,7039,1,7040,2,7041,3,7042,4,7043,5,7044,6,7045,7,7046,8,7047,9,7048,10,7049,11,7050,12,7051,13,7052,14,7053,15,
 								47019,27,47020,25,47021,12,47022,13,47023,14,47024,15};
-								
-	//public String spellName = "Select Spell";
 	public void assignAutocast(int button) {
 		for (int j = 0; j < autocastIds.length; j++) {
 			if (autocastIds[j] == button) {
@@ -193,53 +191,12 @@ public abstract class Player {
 				autocastId = autocastIds[j+1];
 				c.getPA().sendFrame36(108, 1);
 				c.setSidebarInterface(0, 328);
-				//spellName = getSpellName(autocastId);
-				//spellName = spellName;
-				//c.getPA().sendFrame126(spellName, 354);
 				c = null;
 				break;
 			}		
 		}	
 	}
 	
-	public String getSpellName(int id) {
-		switch (id) {
-			case 0: return "Air Strike";
-			case 1: return "Water Strike";
-			case 2: return "Earth Strike";
-			case 3: return "Fire Strike";
-			case 4: return "Air Bolt";
-			case 5: return "Water Bolt";
-			case 6: return "Earth Bolt";
-			case 7: return "Fire Bolt";
-			case 8: return "Air Blast";
-			case 9: return "Water Blast";
-			case 10: return "Earth Blast";
-			case 11: return "Fire Blast";
-			case 12: return "Air Wave";
-			case 13: return "Water Wave";
-			case 14: return "Earth Wave";
-			case 15: return "Fire Wave";
-			case 32: return "Shadow Rush";
-			case 33: return "Smoke Rush";
-			case 34: return "Blood Rush";
-			case 35: return "Ice Rush";
-			case 36: return "Shadow Burst";
-			case 37: return "Smoke Burst";
-			case 38: return "Blood Burst";
-			case 39: return "Ice Burst";
-			case 40: return "Shadow Blitz";
-			case 41: return "Smoke Blitz";
-			case 42: return "Blood Blitz";
-			case 43: return "Ice Blitz";
-			case 44: return "Shadow Barrage";
-			case 45: return "Smoke Barrage";
-			case 46: return "Blood Barrage";
-			case 47: return "Ice Barrage";
-			default:
-			return "Select Spell";
-		}
-	}
 	
 	public boolean fullVoidRange() {
 		return playerEquipment[playerHat] == 11664 && playerEquipment[playerLegs] == 8840 && playerEquipment[playerChest] == 8839 && playerEquipment[playerHands] == 8842;
@@ -259,10 +216,8 @@ public int reduceSpellId;
 	public boolean[] canUseReducingSpell = {true, true, true, true, true, true};
 	public int prayerId = -1;
 	public int headIcon = -1;
-	public int bountyIcon = 0;
-	public long stopPrayerDelay, prayerDelay;
+	public long stopPrayerDelay;
 	public boolean usingPrayer;
-	public final int[] PRAYER_DRAIN_RATE = 		{500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500};
 	public final int[] PRAYER_LEVEL_REQUIRED = 	{1,4,7,8,9,10,13,16,19,22,25,26,27,28,31,34,37,40,43,44,45,46,49,52,60,70};
 	public final int[] PRAYER = 				{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
 	public final String[] PRAYER_NAME = 		{"Thick Skin", "Burst of Strength", "Clarity of Thought", "Sharp Eye", "Mystic Will", "Rock Skin", "Superhuman Strength", "Improved Reflexes","Rapid Restore", 
@@ -274,32 +229,30 @@ public int reduceSpellId;
 												
 	public boolean[] prayerActive = 			{false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
 	
-	public int duelTimer, duelTeleX, duelTeleY, duelSlot, duelSpaceReq, duelOption, duelingWith, duelStatus;
+	public int duelTeleX, duelTeleY, duelSlot, duelSpaceReq, duelOption, duelingWith, duelStatus;
 	public int headIconPk = -1, headIconHints;
 	public boolean duelRequested;
 	public boolean[] duelRule = new boolean[22];
 	public final int[] DUEL_RULE_ID = {1, 2, 16, 32, 64, 128, 256, 512, 1024, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 2097152, 8388608, 16777216, 67108864, 134217728};
 	
-	public boolean doubleHit, usingSpecial, npcDroppingItems, usingRangeWeapon, usingBow, usingMagic, castingMagic;
+	public boolean doubleHit, usingSpecial, usingRangeWeapon, usingBow, usingMagic, castingMagic;
 	public int specMaxHitIncrease, freezeDelay, freezeTimer = -6, killerId, playerIndex, oldPlayerIndex, lastWeaponUsed, projectileStage, crystalBowArrowCount, playerMagicBook, teleGfx, teleEndAnimation, teleHeight, teleX, teleY, rangeItemUsed, killingNpcIndex, totalDamageDealt, oldNpcIndex, fightMode, attackTimer, npcIndex,npcClickIndex, npcType, castingSpellId, oldSpellId, spellId, hitDelay;
-	public boolean magicFailed, oldMagicFailed;
+	public boolean magicFailed;
 	public int bowSpecShot, clickNpcType, clickObjectType, objectId, objectX, objectY, objectXOffset, objectYOffset, objectDistance;
 	public int pItemX, pItemY, pItemId;
 	public boolean isMoving, walkingToItem;
 	public boolean isShopping, updateShop;
 	public int myShopId;
 	public int tradeStatus, tradeWith;
-	public boolean forcedChatUpdateRequired, inDuel, tradeAccepted, goodTrade, inTrade, tradeRequested, tradeResetNeeded, tradeConfirmed, tradeConfirmed2, canOffer, acceptTrade, acceptedTrade;
-	public int attackAnim, animationRequest = -1,animationWaitCycles;
+	public boolean forcedChatUpdateRequired, tradeAccepted, goodTrade, inTrade, tradeRequested, tradeResetNeeded, tradeConfirmed, tradeConfirmed2, canOffer, acceptedTrade;
+	public int animationRequest = -1,animationWaitCycles;
 	public int[] playerBonus = new int[12];
 	public boolean isRunning2 = true;
 	public boolean takeAsNote;
 	public int combatLevel;
 	public boolean saveFile = false;
 	public int playerAppearance[] = new int[13];
-	public int apset;
-	public int actionID;
-	public int wearItemTimer, wearId, wearSlot, interfaceId;
+	public int wearId, wearSlot, interfaceId;
 	public int XremoveSlot, XinterfaceID, XremoveID, Xamount;
 	
 	public int tutorial = 15;
@@ -311,18 +264,6 @@ public int reduceSpellId;
 	 * SouthWest, NorthEast, SouthWest, NorthEast
 	 */
 	
-	public boolean isInTut() {		
-		if(absX >= 2625 && absX <= 2687 && absY >= 4670 && absY <= 4735) {
-			return true;
-		}
-		return false;
-	}
-	public boolean inArea(int x, int y, int x1, int y1) {
-		if (absX > x && absX < x1 && absY < y && absY > y1) {
-			return true;
-		}
-		return false;
-	}
 	
 	public boolean inWild() {
 		if(absX > 2941 && absX < 3392 && absY > 3518 && absY < 3966 ||
@@ -365,13 +306,9 @@ public int reduceSpellId;
 		}
 		return false;
 	}
-	public boolean inPirateHouse() {
-		return absX >= 3038 && absX <= 3044 && absY >= 3949 && absY <= 3959;
-	}
 	
 	
 	public String connectedFrom="";
-	public String globalMessage="";
 	public abstract void initialize();
 	public abstract void update();
 	public int playerId = -1;		
@@ -384,7 +321,6 @@ public int reduceSpellId;
 	public int playerItemsN[] = new int[28];
 	public int bankItems[] = new int[Config.BANK_SIZE];
 	public int bankItemsN[] = new int[Config.BANK_SIZE];
-	public boolean bankNotes = false;
 	
 	public int playerStandIndex = 0x328;
 	public int playerTurnIndex = 0x337;
@@ -491,10 +427,6 @@ public int reduceSpellId;
 		playerAppearance[10] = 9; // legs colour
 		playerAppearance[11] = 5; // feet colour
 		playerAppearance[12] = 0; // skin colour	
-		
-		apset = 0;
-		actionID = 0;
-
 		playerEquipment[playerHat]=-1;
 		playerEquipment[playerCape]=-1;
 		playerEquipment[playerAmulet]=-1;
@@ -568,9 +500,6 @@ public int reduceSpellId;
 	public int currentX, currentY;			
 	
 	public int heightLevel;		
-	public int playerSE = 0x328; 
-	public int playerSEW = 0x333; 
-	public int playerSER = 0x334; 
 
 	public boolean updateRequired = true;		
 												
@@ -643,8 +572,6 @@ public int reduceSpellId;
 	public boolean didTeleport = false;		
 	public boolean mapRegionDidChange = false;
 	public int dir1 = -1, dir2 = -1;		
-    public boolean createItems = false;
-    public int poimiX = 0, poimiY = 0;
 		
 	public synchronized void getNextPlayerMovement() {
 			mapRegionDidChange = false;
@@ -805,7 +732,6 @@ public int reduceSpellId;
 	}
 
 	
-	public byte cachedPropertiesBitmap[] = new byte[(Config.MAX_PLAYERS+7) >> 3];
 
 	public void addNewNPC(NPC npc, Stream str, Stream updateBlock) {
 		synchronized(this) {
@@ -881,8 +807,6 @@ public int reduceSpellId;
 			playerProps.writeByte(headIcon);
 			playerProps.writeByte(headIconPk);
 			//playerProps.writeByte(headIconHints);
-			//playerProps.writeByte(bountyIcon);
-			
 			if (playerEquipment[playerHat] > 1) {
 				playerProps.writeWord(0x200 + playerEquipment[playerHat]);
 			} else {
@@ -1481,9 +1405,6 @@ public int reduceSpellId;
 	}
 
 
-	public void setChatText(byte chatText[]) {
-		this.chatText = chatText;
-	}
 
 
 	public byte[] getChatText() {
@@ -1501,9 +1422,6 @@ public int reduceSpellId;
 	}
 
 
-	public void setNewWalkCmdX(int newWalkCmdX[]) {
-		this.newWalkCmdX = newWalkCmdX;
-	}
 
 
 	public int[] getNewWalkCmdX() {
@@ -1511,9 +1429,6 @@ public int reduceSpellId;
 	}
 
 
-	public void setNewWalkCmdY(int newWalkCmdY[]) {
-		this.newWalkCmdY = newWalkCmdY;
-	}
 
 
 	public int[] getNewWalkCmdY() {
@@ -1540,25 +1455,7 @@ public int reduceSpellId;
 		this.outStreamDecryption = outStreamDecryption;
 	}
 	
-	public boolean samePlayer() {
-		for (int j = 0; j < Server.playerHandler.players.length; j++) {
-			if (j == playerId)
-				continue;
-			if (Server.playerHandler.players[j] != null) {
-				if (Server.playerHandler.players[j].playerName.equalsIgnoreCase(playerName)) {
-					disconnected = true;
-					return true;
-				}	
-			}
-		}
-		return false;	
-	}
 	
-	public void putInCombat(int attacker) {
-		underAttackBy = attacker;
-		logoutDelay = System.currentTimeMillis();
-		singleCombatDelay = System.currentTimeMillis();	
-	}
 	
 	public void dealDamage(int damage) {
 		if (teleTimer <= 0)
