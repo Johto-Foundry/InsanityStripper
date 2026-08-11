@@ -526,6 +526,11 @@ case 58253:
 			case 50245:
 				c.getPA().startTeleport(Config.LUMBY_X, Config.LUMBY_Y, 0, "modern");
 				break;
+
+			case 51013:
+			case 6004:
+				c.getPA().startTeleport(2662, 3305, 0, "modern");
+				break;
 			
 			case 50253:
 			case 4146:
