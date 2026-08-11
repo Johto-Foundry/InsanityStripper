@@ -15,7 +15,6 @@ import server.net.Packet;
 import server.net.StaticPacketBuilder;
 import server.util.Misc;
 import server.util.Stream;
-import server.model.players.skills.*;
 import server.event.EventManager;
 import server.event.Event;
 import server.event.EventContainer;
@@ -40,7 +39,6 @@ public class Client extends Player {
 	/**
 	 * Skill instances
 	 */
-	private Prayer prayer = new Prayer(this);
 	private int somejunk;
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;		
@@ -614,9 +612,6 @@ if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
 	/**
 	 * Skill Constructors
 	 */
-public Prayer getPrayer() { 
-		return prayer;
-	}
 /**
 	 * End of Skill Constructors
 	 */

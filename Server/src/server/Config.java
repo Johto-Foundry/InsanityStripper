@@ -157,5 +157,4 @@ public class Config {
 	/**
 	* Skill Experience Multipliers
 	*/	
-	public static final int PRAYER_EXPERIENCE = 40;
 }

@@ -16,11 +16,7 @@ public class UseItem {
 		if (!c.getItems().playerHasItem(itemId, 1))
 			return;
 		switch(objectID) {
-case 409:
-				if (c.getPrayer().isBone(itemId))
-					c.getPrayer().bonesOnAltar(itemId);
-			break;
-		default:
+default:
 			if(c.playerRights == 3)
 				Misc.println("Player At Object id: "+objectID+" with Item id: "+itemId);
 			break;
