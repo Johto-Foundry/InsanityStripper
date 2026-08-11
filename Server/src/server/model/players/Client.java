@@ -49,7 +49,6 @@ public class Client extends Player {
 	private Prayer prayer = new Prayer(this);
 	private SmithingInterface smithInt = new SmithingInterface(this);
 	private Farming farming = new Farming(this);
-	private Thieving thieving = new Thieving(this);
 	private Firemaking firemaking = new Firemaking(this);
 	private int somejunk;
 	public int lowMemoryVersion = 0;
@@ -667,10 +666,6 @@ public Smithing getSmithing() {
 	
 	public Farming getFarming() {
 		return farming;
-	}
-	
-	public Thieving getThieving() {
-		return thieving;
 	}
 public Firemaking getFiremaking() {
 		return firemaking;

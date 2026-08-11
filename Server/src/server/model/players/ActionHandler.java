@@ -503,22 +503,7 @@ public class ActionHandler {
 			case 11758:
 				c.getPA().openUpBank();
 			break;
-			case 6163:
-				c.getThieving().stealFromStall(1897, 10, 1);
-			break;
-			case 6165:
-				c.getThieving().stealFromStall(950, 30, 25);
-			break;
-			case 6166:
-				c.getThieving().stealFromStall(1635, 60, 50);
-			break;
-			case 6164:
-				c.getThieving().stealFromStall(7650, 100, 75);
-			break;
-			case 6162:
-				c.getThieving().stealFromStall(1613, 170, 90);
-			break;
-			case 2558:
+case 2558:
 				if (System.currentTimeMillis() - c.lastLockPick < 3000 || c.freezeTimer > 0)
 					break;
 				if (c.getItems().playerHasItem(1523,1)) {
@@ -713,11 +698,7 @@ public class ActionHandler {
 			case 9:
 			case 18:
 			case 20:
-			case 26:
-			case 21:
-				c.getThieving().stealFromNPC(npcType);
-			break;
-			default:
+default:
 				ScriptManager.callFunc("npcClick2_"+npcType, c, npcType);
 				if(c.playerRights == 3) 
 					Misc.println("Second Click Npc : "+npcType);

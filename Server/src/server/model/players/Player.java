@@ -103,7 +103,7 @@ newLocation,
 	public double specDamage = 1;
 	public double prayerPoint = 1.0;
 	public int teleGrabItem, teleGrabX, teleGrabY, duelCount, underAttackBy, underAttackBy2, wildLevel, teleTimer, respawnTimer, saveTimer = 0, teleBlockLength, poisonDelay;
-	public long lastPlayerMove,lastPoison,lastPoisonSip,poisonImmune,lastSpear,lastProtItem, dfsDelay, lastVeng,lastYell,teleGrabDelay, protMageDelay, protMeleeDelay, protRangeDelay, lastAction, lastThieve,lastLockPick, alchDelay, specDelay = System.currentTimeMillis(), duelDelay, teleBlockDelay, godSpellDelay, singleCombatDelay, singleCombatDelay2, reduceStat, restoreStatsDelay, logoutDelay, buryDelay, foodDelay, potDelay;
+	public long lastPlayerMove,lastPoison,lastPoisonSip,poisonImmune,lastSpear,lastProtItem, dfsDelay, lastVeng,lastYell,teleGrabDelay, protMageDelay, protMeleeDelay, protRangeDelay, lastAction,lastLockPick, alchDelay, specDelay = System.currentTimeMillis(), duelDelay, teleBlockDelay, godSpellDelay, singleCombatDelay, singleCombatDelay2, reduceStat, restoreStatsDelay, logoutDelay, buryDelay, foodDelay, potDelay;
 	public boolean canChangeAppearance = false;
 	public boolean mageAllowed;
 	public byte poisonMask = 0;
