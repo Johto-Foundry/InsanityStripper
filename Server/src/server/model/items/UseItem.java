@@ -44,10 +44,6 @@ public class UseItem {
 			c.getHerblore().handlePotMaking(itemUsed,useWith);
 		if (c.getItems().getItemName(itemUsed).contains("(") && c.getItems().getItemName(useWith).contains("("))
 			c.getPotMixing().mixPotion2(itemUsed, useWith);
-		if (itemUsed == 1733 || useWith == 1733)
-			c.getCrafting().handleLeather(itemUsed, useWith);
-		if (itemUsed == 1755 || useWith == 1755)
-			c.getCrafting().handleChisel(itemUsed,useWith);
 		if (itemUsed == 946 || useWith == 946)
 			c.getFletching().handleLog(itemUsed,useWith);
 		if (itemUsed == 53 || useWith == 53 || itemUsed == 52 || useWith == 52)

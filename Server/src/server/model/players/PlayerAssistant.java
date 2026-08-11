@@ -1894,7 +1894,6 @@ public class PlayerAssistant{
 	
 	public void resetVariables() {
 		c.getFishing().resetFishing();
-		c.getCrafting().resetCrafting();
 		c.usingGlory = false;
 		c.smeltInterface = false;
 		c.smeltType = 0;

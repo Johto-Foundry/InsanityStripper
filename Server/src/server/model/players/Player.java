@@ -37,7 +37,6 @@ public abstract class Player {
 	usedSpecial = false,
 	mageFollow = false,
 	dbowSpec = false,
-	craftingLeather = false,
 	properLogout = false,
 	secDbow = false,
 	maxNextHit = false,

@@ -46,7 +46,6 @@ public class Client extends Player {
 	private Mining mine = new Mining(this);
 	private Cooking cooking = new Cooking(this);
 	private Fishing fish = new Fishing(this);
-	private Crafting crafting = new Crafting(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
 	private Fletching fletching = new Fletching(this);
@@ -671,12 +670,7 @@ public class Client extends Player {
 	public Fishing getFishing() {
 		return fish;
 	}
-	
-	public Crafting getCrafting() {
-		return crafting;
-	}
-	
-	public Smithing getSmithing() {
+public Smithing getSmithing() {
 		return smith;
 	}
 	
