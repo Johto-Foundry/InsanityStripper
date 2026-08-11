@@ -7,7 +7,6 @@ import server.model.players.Client;
 import server.model.players.PacketType;
 import server.model.players.PlayerHandler;
 import server.util.Misc;
-import server.world.WorldMap;
 
 
 /**

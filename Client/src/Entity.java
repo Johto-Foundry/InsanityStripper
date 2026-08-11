@@ -1,7 +1,6 @@
 // Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) 
-import java.util.Random;
+// Decompiler options: packimports(3)
 
 public class Entity extends Animable {
 
@@ -50,8 +49,8 @@ public class Entity extends Animable {
 		for(int i1 = 0; i1 < 4; i1++)
 			if(hitsLoopCycle[i1] <= l)
 			{
-				hitArray[i1] = k * ((client.newDamage == true && k > 0) ? 10 : 1);
-				if (client.newDamage && k > 0) {
+				hitArray[i1] = k * ((Client.newDamage == true && k > 0) ? 10 : 1);
+				if (Client.newDamage && k > 0) {
 					hitArray[i1] += new java.util.Random().nextInt(9);
 				}
 				hitMarkTypes[i1] = j;
