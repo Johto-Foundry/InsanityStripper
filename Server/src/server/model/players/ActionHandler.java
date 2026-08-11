@@ -150,13 +150,7 @@ public class ActionHandler {
 			//Server.objectHandler.startObelisk(objectType);
 			Server.objectManager.startObelisk(objectType);
 		break;
-		case 8143:
-			if (c.farm[0] > 0 && c.farm[1] > 0) {
-				c.getFarming().pickHerb();
-			}
-		break;
-	
-			// DOORS
+// DOORS
 		case 1516:
 		case 1519:
 			if (c.objectY == 9698) {

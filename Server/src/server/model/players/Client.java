@@ -44,7 +44,6 @@ public class Client extends Player {
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
 	private SmithingInterface smithInt = new SmithingInterface(this);
-	private Farming farming = new Farming(this);
 	private int somejunk;
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;		
@@ -629,10 +628,6 @@ public class Client extends Player {
 	}
 public Smithing getSmithing() {
 		return smith;
-	}
-	
-	public Farming getFarming() {
-		return farming;
 	}
 public SmithingInterface getSmithingInt() {
 		return smithInt;

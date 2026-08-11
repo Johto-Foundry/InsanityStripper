@@ -19,10 +19,6 @@ public class UseItem {
 			case 2783:
 				c.getSmithingInt().showSmithInterface(itemId);
 			break;
-			case 8151:
-			case 8389:
-				c.getFarming().checkItemOnObject(itemId);
-			break;
 case 409:
 				if (c.getPrayer().isBone(itemId))
 					c.getPrayer().bonesOnAltar(itemId);

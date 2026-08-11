@@ -315,9 +315,6 @@ public int reduceSpellId;
 	public int smeltTimer = 0;
 	public boolean smeltInterface;
 	public boolean patchCleared;
-	public int[] farm = new int[2];
-	
-	
 	public boolean antiFirePot = false;
 	
 	
