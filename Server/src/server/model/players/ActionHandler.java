@@ -150,17 +150,6 @@ public class ActionHandler {
 			//Server.objectHandler.startObelisk(objectType);
 			Server.objectManager.startObelisk(objectType);
 		break;
-		case 2286:
-		case 154:
-		case 4058:
-		case 2295:
-		case 2285:
-		case 2313:
-		case 2312:
-		case 2314:
-			c.getAgility().handleGnomeCourse(objectType,obX,obY);
-		break;
-		
 		case 1276:
 		case 1278://trees
 			//c.sendMessage("You chop the tree.");

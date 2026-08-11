@@ -44,7 +44,6 @@ public class Client extends Player {
 	private Runecrafting runecrafting = new Runecrafting(this);
 	private Woodcutting woodcutting = new Woodcutting(this);
 	private Mining mine = new Mining(this);
-	private Agility agility = new Agility(this);
 	private Cooking cooking = new Cooking(this);
 	private Fishing fish = new Fishing(this);
 	private Crafting crafting = new Crafting(this);
@@ -668,11 +667,7 @@ public class Client extends Player {
 	public Cooking getCooking() {
 		return cooking;
 	}
-	
-	public Agility getAgility() {
-		return agility;
-	}
-	
+		
 	public Fishing getFishing() {
 		return fish;
 	}
