@@ -74,18 +74,7 @@ if ((itemUsed == 1540 && useWith == 11286) || (itemUsed == 11286 && useWith == 1
 		}
 		
 		switch(itemUsed) {
-			case 1511:
-			case 1521:
-			case 1519:
-			case 1517:
-			case 1515:
-			case 1513:
-			case 590:
-				//c.getFiremaking().checkLogType(itemUsed, useWith);
-				c.sendMessage("Firemaking is disabled.");
-			break;
-			
-		default:
+default:
 			if(c.playerRights == 3)
 				Misc.println("Player used Item id: "+itemUsed+" with Item id: "+useWith);
 			break;
