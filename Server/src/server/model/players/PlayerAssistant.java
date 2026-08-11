@@ -1897,7 +1897,6 @@ public class PlayerAssistant{
 		c.smeltInterface = false;
 		c.smeltType = 0;
 		c.smeltAmount = 0;
-		c.woodcut[0] = c.woodcut[1] = c.woodcut[2] = 0;
 	}
 	
 	public int antiFire() {

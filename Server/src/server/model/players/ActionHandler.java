@@ -150,58 +150,6 @@ public class ActionHandler {
 			//Server.objectHandler.startObelisk(objectType);
 			Server.objectManager.startObelisk(objectType);
 		break;
-		case 1276:
-		case 1278://trees
-			//c.sendMessage("You chop the tree.");
-			/* Woodcutting object respawning etc. by lmtruck... making my own - look at this for example
-			Objects stump = new Objects(1343, c.objectX, c.objectY, 0, -1, 10, 0);
-			Server.objectHandler.addObject(stump);
-			Server.objectHandler.placeObject(stump);
-			Objects tree = new Objects(c.objectId, c.objectX, c.objectY, 0, -1, 10, 7);
-			Server.objectHandler.addObject(tree);*/
-			//c.treeId = objectType;
-			c.woodcut[0] = 1511;
-			c.woodcut[1] = 1;
-			c.woodcut[2] = 25;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-		
-		case 1281: //oak
-			c.woodcut[0] = 1521;
-			c.woodcut[1] = 15;
-			c.woodcut[2] = 37;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-		
-		case 1308: //willow
-			c.woodcut[0] = 1519;
-			c.woodcut[1] = 30;
-			c.woodcut[2] = 68;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-		
-		case 1307: //maple
-			c.woodcut[0] = 1517;
-			c.woodcut[1] = 45;
-			c.woodcut[2] = 100;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-		
-		case 1309: //yew
-			c.woodcut[0] = 1515;
-			c.woodcut[1] = 60;
-			c.woodcut[2] = 175;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-		
-		case 1306: //yew
-			c.woodcut[0] = 1513;
-			c.woodcut[1] = 75;
-			c.woodcut[2] = 250;
-			c.getWoodcutting().startWoodcutting(c.woodcut[0], c.woodcut[1], c.woodcut[2]);
-		break;
-
-		
 		case 8143:
 			if (c.farm[0] > 0 && c.farm[1] > 0) {
 				c.getFarming().pickHerb();

@@ -41,7 +41,6 @@ public class Client extends Player {
 	 * Skill instances
 	 */
 	private Slayer slayer = new Slayer(this);
-	private Woodcutting woodcutting = new Woodcutting(this);
 	private Cooking cooking = new Cooking(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
@@ -273,12 +272,7 @@ public class Client extends Player {
 	public int packetSize = 0, packetType = -1;
 	
 	public void process() {
-		
-		if (wcTimer > 0 && woodcut[0] > 0) {
-			wcTimer--;
-		} else if (wcTimer == 0 && woodcut[0] > 0) {
-			getWoodcutting().cutWood();
-		} else  if (smeltTimer > 0 && smeltType > 0) {
+		if (smeltTimer > 0 && smeltType > 0) {
 			smeltTimer--;
 		} else if (smeltTimer == 0 && smeltType > 0) {
 			getSmithing().smelt(smeltType);
@@ -633,9 +627,6 @@ public class Client extends Player {
 	 */
 	public Slayer getSlayer() {
 		return slayer;
-	}
-public Woodcutting getWoodcutting() {
-		return woodcutting;
 	}
 public Cooking getCooking() {
 		return cooking;

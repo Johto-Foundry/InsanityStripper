@@ -310,8 +310,6 @@ public int reduceSpellId;
 	
 	public int tutorial = 15;
 	public boolean usingGlory = false;
-	public int[] woodcut = new int [3];
-	public int wcTimer = 0;
 	public int smeltType; //1 = bronze, 2 = iron, 3 = steel, 4 = gold, 5 = mith, 6 = addy, 7 = rune
 	public int smeltAmount;
 	public int smeltTimer = 0;
