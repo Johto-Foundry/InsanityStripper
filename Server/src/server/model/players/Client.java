@@ -44,7 +44,6 @@ public class Client extends Player {
 	private Woodcutting woodcutting = new Woodcutting(this);
 	private Mining mine = new Mining(this);
 	private Cooking cooking = new Cooking(this);
-	private Fishing fish = new Fishing(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
 	private SmithingInterface smithInt = new SmithingInterface(this);
@@ -288,10 +287,6 @@ public class Client extends Player {
 			smeltTimer--;
 		} else if (smeltTimer == 0 && smeltType > 0) {
 			getSmithing().smelt(smeltType);
-		} else if (fishing && fishTimer > 0) {
-			fishTimer--;
-		} else if (fishing && fishTimer == 0) {
-			getFishing().catchFish();
 		}
 		
 		if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
@@ -654,10 +649,6 @@ public Woodcutting getWoodcutting() {
 	
 	public Cooking getCooking() {
 		return cooking;
-	}
-		
-	public Fishing getFishing() {
-		return fish;
 	}
 public Smithing getSmithing() {
 		return smith;

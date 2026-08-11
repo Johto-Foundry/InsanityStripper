@@ -314,8 +314,6 @@ public int reduceSpellId;
 	public int wcTimer = 0;
 	public int[] mining = new int [3];
 	public int miningTimer = 0;
-	public boolean fishing = false;
-	public int fishTimer = 0;
 	public int smeltType; //1 = bronze, 2 = iron, 3 = steel, 4 = gold, 5 = mith, 6 = addy, 7 = rune
 	public int smeltAmount;
 	public int smeltTimer = 0;

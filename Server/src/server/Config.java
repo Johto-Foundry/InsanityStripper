@@ -161,7 +161,6 @@ public class Config {
 	public static final int MINING_EXPERIENCE = 40;
 	public static final int SMITHING_EXPERIENCE = 40;
 	public static final int FARMING_EXPERIENCE = 40;
-	public static final int FISHING_EXPERIENCE = 40;
 	public static final int PRAYER_EXPERIENCE = 40;
 	public static final int SLAYER_EXPERIENCE = 50;
 	public static final int COOKING_EXPERIENCE = 40;

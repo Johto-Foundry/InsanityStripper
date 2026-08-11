@@ -614,22 +614,7 @@ case 2558:
 			case 462:
 				c.getDH().sendDialogues(7, npcType);
 			break;
-			case 316: //shrimp
-				c.getFishing().setupFishing(317);
-			break;
-			case 334: //mantas
-				c.getFishing().setupFishing(389);
-			break;
-			case 324: //tuna
-				c.getFishing().setupFishing(359);
-			break;
-			case 314: //salmon
-				c.getFishing().setupFishing(335);
-			break;
-			case 326: //monks
-				c.getFishing().setupFishing(7944);
-			break;
-			case 522:
+case 522:
 			case 523:
 				c.getShops().openShop(1);
 			break;
@@ -655,16 +640,10 @@ case 2558:
 			case 1282:
 				c.getShops().openShop(7);
 			break;
-			case 334: //sharks
-				c.getFishing().setupFishing(383);
-			break;
-			case 494:
+case 494:
 				c.getPA().openUpBank();
 			break;
-			case 324: //lobs
-				c.getFishing().setupFishing(359);
-			break;
-			case 904:
+case 904:
 				c.getShops().openShop(17);
 			break;
 			case 522:
