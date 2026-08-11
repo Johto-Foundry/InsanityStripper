@@ -41,7 +41,6 @@ public class Client extends Player {
 	 * Skill instances
 	 */
 	private Slayer slayer = new Slayer(this);
-	private Cooking cooking = new Cooking(this);
 	private Smithing smith = new Smithing(this);
 	private Prayer prayer = new Prayer(this);
 	private SmithingInterface smithInt = new SmithingInterface(this);
@@ -627,9 +626,6 @@ public class Client extends Player {
 	 */
 	public Slayer getSlayer() {
 		return slayer;
-	}
-public Cooking getCooking() {
-		return cooking;
 	}
 public Smithing getSmithing() {
 		return smith;

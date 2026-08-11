@@ -23,11 +23,7 @@ public class UseItem {
 			case 8389:
 				c.getFarming().checkItemOnObject(itemId);
 			break;
-			case 2728:
-			case 12269:
-				c.getCooking().itemOnObject(itemId);
-			break;
-			case 409:
+case 409:
 				if (c.getPrayer().isBone(itemId))
 					c.getPrayer().bonesOnAltar(itemId);
 			break;
