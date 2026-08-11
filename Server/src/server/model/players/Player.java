@@ -260,9 +260,6 @@ public int reduceSpellId;
 	public long[] reduceSpellDelay = new long[6];
 	public final int[] REDUCE_SPELLS = {1153,1157,1161,1542,1543,1562};
 	public boolean[] canUseReducingSpell = {true, true, true, true, true, true};
-	
-	public int slayerTask,taskAmount;
-	
 	public int prayerId = -1;
 	public int headIcon = -1;
 	public int bountyIcon = 0;

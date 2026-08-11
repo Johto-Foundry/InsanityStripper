@@ -1000,7 +1000,6 @@ newNPC.killerId = c.playerId;
 						npcs[i].needRespawn = true;
 						npcs[i].actionTimer = getRespawnTime(i); // respawn time
 						dropItems(i); // npc drops items!
-						appendSlayerExperience(i);
 						appendKillCount(i);
 						npcs[i].absX = npcs[i].makeX;
 						npcs[i].absY = npcs[i].makeY;				
@@ -1287,24 +1286,7 @@ newNPC.killerId = c.playerId;
 		return 1;
 	}
 	
-	/**
-	* Slayer Experience
-	**/	
-	public void appendSlayerExperience(int i) {
-		int npc = 0;
-		Client c = (Client)Server.playerHandler.players[npcs[i].killedBy];
-		if(c != null) {
-			if (c.slayerTask == npcs[i].npcType){
-				c.taskAmount--;
-				c.getPA().addSkillXP(npcs[i].MaxHP * Config.SLAYER_EXPERIENCE, 18);
-				if (c.taskAmount <= 0) {
-					c.getPA().addSkillXP((npcs[i].MaxHP * 8) * Config.SLAYER_EXPERIENCE, 18);
-					c.slayerTask = -1;
-					c.sendMessage("You completed your slayer task. Please see a slayer master to get a new one.");
-				}
-			}
-		}
-	}
+	
 	
 	/**
 	 *	Resets players in combat

@@ -11,21 +11,7 @@ public class CombatAssistant{
 	public CombatAssistant(Client Client) {
 		this.c = Client;
 	}
-	
 
-	public int[][] slayerReqs = {{1648,5},{1612,15},{1643,45},{1618,50},{1624,65},{1610,75},{1613,80},{1615,85},{2783,90}};
-	
-	public boolean goodSlayer(int i) {
-		for (int j = 0; j < slayerReqs.length; j++) {
-			if (slayerReqs[j][0] == Server.npcHandler.npcs[i].npcType) {
-				if (slayerReqs[j][1] > c.playerLevel[c.playerSlayer]) {
-					c.sendMessage("You need a slayer level of " + slayerReqs[j][1] + " to harm this NPC.");
-					return false;
-				}
-			}
-		}
-		return true;
-	}
 	
 	/**
 	* Attack Npcs
@@ -50,10 +36,6 @@ public class CombatAssistant{
 			if ((c.underAttackBy > 0 || c.underAttackBy2 > 0) && c.underAttackBy2 != i && !c.inMulti()) {
 				resetPlayerAttack();
 				c.sendMessage("I am already under attack.");
-				return;
-			}
-			if (!goodSlayer(i)) {
-				resetPlayerAttack();
 				return;
 			}
 			if (Server.npcHandler.npcs[i].spawnedBy != c.playerId && Server.npcHandler.npcs[i].spawnedBy > 0) {

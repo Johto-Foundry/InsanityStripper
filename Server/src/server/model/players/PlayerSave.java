@@ -87,11 +87,7 @@ public class PlayerSave
 						p.specAmount = Double.parseDouble(token2);							
 					} else if (token.equals("teleblock-length")) {
 						p.teleBlockDelay = System.currentTimeMillis();
-						p.teleBlockLength = Integer.parseInt(token2);							
-										} else if (token.equals("slayerTask")) {
-						p.slayerTask = Integer.parseInt(token2);					
-					} else if (token.equals("taskAmount")) {
-						p.taskAmount = Integer.parseInt(token2);					
+						p.teleBlockLength = Integer.parseInt(token2);					
 					} else if (token.equals("magePoints")) {
 						p.magePoints = Integer.parseInt(token2);					
 					} else if (token.equals("autoRet")) {
@@ -234,12 +230,7 @@ characterfile.write("special-amount = ", 0, 17);
 			characterfile.write("teleblock-length = ", 0, 19);
 			characterfile.write(Integer.toString(tbTime), 0, Integer.toString(tbTime).length());
 			characterfile.newLine();
-			characterfile.write("slayerTask = ", 0, 13);
-			characterfile.write(Integer.toString(p.slayerTask), 0, Integer.toString(p.slayerTask).length());
-			characterfile.newLine();
-			characterfile.write("taskAmount = ", 0, 13);
-			characterfile.write(Integer.toString(p.taskAmount), 0, Integer.toString(p.taskAmount).length());
-			characterfile.newLine();
+
 			characterfile.write("magePoints = ", 0, 13);
 			characterfile.write(Integer.toString(p.magePoints), 0, Integer.toString(p.magePoints).length());
 			characterfile.newLine();

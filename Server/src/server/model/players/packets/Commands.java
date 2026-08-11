@@ -130,13 +130,7 @@ public class Commands implements PacketType {
 		
 		
 		if(c.playerRights >= 3) {
-			
-			/*if (playerCommand.startsWith("task")) {
-				c.taskAmount = -1;
-				c.slayerTask = 0;
-			}
-			
-			if (playerCommand.startsWith("starter")) {
+			/*if (playerCommand.startsWith("starter")) {
 				c.getDH().sendDialogues(100, 945);			
 			}*/
 			if (playerCommand.equalsIgnoreCase("mypos")) {

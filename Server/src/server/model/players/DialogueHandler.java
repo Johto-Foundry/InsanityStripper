@@ -31,12 +31,7 @@ public class DialogueHandler {
 			c.dialogueAction = 1;
 			c.nextChat = 0;
 			break;
-		case 3:
-			sendNpcChat4("Hello!", "My name is Duradel and I am a master of the slayer skill.", "I can assign you a slayer task suitable to your combat level.", 
-			"Would you like a slayer task?", c.talkingNpc, "Duradel");
-			c.nextChat = 4;
-		break;
-		case 5:
+case 5:
 			sendNpcChat4("Hello adventurer...", "My name is Kolodion, the master of this mage bank.", "Would you like to play a minigame in order ", 
 						"to earn points towards recieving magic related prizes?", c.talkingNpc, "Kolodion");
 			c.nextChat = 6;
@@ -46,25 +41,7 @@ public class DialogueHandler {
 			"You must kill mages to recieve points,","redeem points with the chamber guardian.", c.talkingNpc, "Kolodion");
 			c.nextChat = 15;
 		break;
-		case 11:
-			sendNpcChat4("Hello!", "My name is Duradel and I am a master of the slayer skill.", "I can assign you a slayer task suitable to your combat level.", 
-			"Would you like a slayer task?", c.talkingNpc, "Duradel");
-			c.nextChat = 12;
-		break;
-		case 12:
-			sendOption2("Yes I would like a slayer task.", "No I would not like a slayer task.");
-			c.dialogueAction = 5;
-		break;
-		case 13:
-			sendNpcChat4("Hello!", "My name is Duradel and I am a master of the slayer skill.", "I see I have already assigned you a task to complete.", 
-			"Would you like me to give you an easier task?", c.talkingNpc, "Duradel");
-			c.nextChat = 14;
-		break;
-		case 14:
-			sendOption2("Yes I would like an easier task.", "No I would like to keep my task.");
-			c.dialogueAction = 6;
-		break;
-		case 15:
+case 15:
 			sendOption2("Yes I would like to play", "No, sounds too dangerous for me.");
 			c.dialogueAction = 7;
 		break;

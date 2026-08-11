@@ -429,14 +429,7 @@ case 2558:
 			case 2258:
 				c.getDH().sendDialogues(17, npcType);
 			break;
-			case 1599:
-				if (c.slayerTask <= 0) {
-					c.getDH().sendDialogues(11,npcType);
-				} else {
-					c.getDH().sendDialogues(13,npcType);
-				}
-			break;
-			case 541:
+case 541:
 				c.getShops().openShop(5);
 			break;
 			

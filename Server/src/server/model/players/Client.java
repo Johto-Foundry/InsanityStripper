@@ -40,7 +40,6 @@ public class Client extends Player {
 	/**
 	 * Skill instances
 	 */
-	private Slayer slayer = new Slayer(this);
 	private Prayer prayer = new Prayer(this);
 	private int somejunk;
 	public int lowMemoryVersion = 0;
@@ -615,9 +614,6 @@ if (System.currentTimeMillis() - lastPoison > 20000 && poisonDamage > 0) {
 	/**
 	 * Skill Constructors
 	 */
-	public Slayer getSlayer() {
-		return slayer;
-	}
 public Prayer getPrayer() { 
 		return prayer;
 	}

@@ -264,11 +264,7 @@ case 58253:
 			
 			case 9157:
 				if (c.dialogueAction == 2) {
-					c.getPA().movePlayer(2507, 4717, 0);		
-				} else if (c.dialogueAction == 5) {
-					c.getSlayer().giveTask();
-				} else if (c.dialogueAction == 6) {
-					c.getSlayer().giveTask2();
+					c.getPA().movePlayer(2507, 4717, 0);
 				} else if (c.dialogueAction == 7) {
 					c.getPA().startTeleport(3088,3933,0,"modern");
 					c.sendMessage("NOTE: You are now in the wilderness...");
@@ -1087,14 +1083,7 @@ case 58253:
 			case 33215:
 				//SkillMenu.openInterface(c, 4);
 			break;
-			
-			case 47130:
-				c.forcedText = "I must slay another " + c.taskAmount + " " + Server.npcHandler.getNpcListName(c.slayerTask) + ".";
-				c.forcedChatUpdateRequired = true;
-				c.updateRequired = true;
-			break;
-			
-			case 24017:
+case 24017:
 				c.getPA().resetAutocast();
 				//c.sendFrame246(329, 200, c.playerEquipment[c.playerWeapon]);
 				c.getItems().sendWeapon(c.playerEquipment[c.playerWeapon], c.getItems().getItemName(c.playerEquipment[c.playerWeapon]));
