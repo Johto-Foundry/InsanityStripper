@@ -720,9 +720,6 @@ public class ActionHandler {
 			case 519:
 				c.getShops().openShop(8);
 			break;
-			case 3789:
-				c.getShops().openShop(18);
-			break;
 			case 1:
 			case 9:
 			case 18:

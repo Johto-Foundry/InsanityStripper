@@ -95,7 +95,6 @@ newLocation,
 	lastNpcAttacked = 0,
 	killCount = 0;
 	public String clanName, properName;
-	public int[] voidStatus = new int[5];
 	public int[] itemKeptId = new int [4]; 
 	public int[] pouches = new int[4];
 	public final int[] POUCH_SIZE = {3,6,9,12};

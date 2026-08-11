@@ -131,10 +131,6 @@ public class ShopAssistant {
 			c.sendMessage(c.getItems().getItemName(removeId)+": currently costs " + getSpecialItemValue(removeId) + " points.");
 			return;
 		}
-		if (c.myShopId == 15) {
-			c.sendMessage("This item current costs " + c.getItems().getUntradePrice(removeId) + " coins.");
-			return;
-		}
 		if (ShopValue >= 1000 && ShopValue < 1000000) {
 			ShopAdd = " (" + (ShopValue / 1000) + "K)";
 		} else if (ShopValue >= 1000000) {
@@ -314,9 +310,6 @@ public class ShopAssistant {
 		if (c.myShopId == 14) {
 			skillBuy(itemID);
 			return false;
-		} else if (c.myShopId == 15) {
-			buyVoid(itemID);
-			return false;		
 		}
 		if (amount > 0) {
 			if (amount > Server.shopHandler.ShopItemsN[c.myShopId][fromSlot]) {
@@ -530,48 +523,6 @@ public class ShopAssistant {
 			c.getItems().resetItems(3823);			
 		}
 		
-		public void openVoid() {
-			/*synchronized(c) {
-				c.getItems().resetItems(3823);
-				c.isShopping = true;
-				c.myShopId = 15;
-				c.getPA().sendFrame248(3824, 3822);
-				c.getPA().sendFrame126("Void Recovery", 3901);
-				
-				int TotalItems = 5;
-				c.getOutStream().createFrameVarSizeWord(53);
-				c.getOutStream().writeWord(3900);
-				c.getOutStream().writeWord(TotalItems);
-				for (int i = 0; i < c.voidStatus.length; i++) {
-					c.getOutStream().writeByte(c.voidStatus[i]);
-					c.getOutStream().writeWordBigEndianA(2519 + i * 2);
-				}
-				c.getOutStream().endFrameVarSizeWord();
-				c.flushOutStream();	
-			}*/		
-		}
-
-		public void buyVoid(int item) {
-			/*if (item > 2527 || item < 2518)
-				return;
-			//c.sendMessage("" + item);
-			if (c.voidStatus[(item-2518)/2] > 0) {
-				if (c.getItems().freeSlots() >= 1) {
-					if (c.getItems().playerHasItem(995,c.getItems().getUntradePrice(item))) {
-						c.voidStatus[(item-2518)/2]--;
-						c.getItems().deleteItem(995,c.getItems().getItemSlot(995), c.getItems().getUntradePrice(item));
-						c.getItems().addItem(item,1);
-						openVoid();
-					} else {
-						c.sendMessage("This item costs " + c.getItems().getUntradePrice(item) + " coins to rebuy.");				
-					}
-				} else {
-					c.sendMessage("I should have a free inventory space.");
-				}
-			} else {
-				c.sendMessage("I don't need to recover this item from the void knights.");
-			}*/
-		}
 
 
 }

@@ -2078,12 +2078,12 @@ public class PlayerAssistant{
 	
 	public void handleLoginText() {
 		c.getPA().sendFrame126("Monster Teleport", 13037);
-		c.getPA().sendFrame126("Minigame Teleport", 13047);
+		c.getPA().sendFrame126("Lumbridge Teleport", 13047);
 		c.getPA().sendFrame126("Boss Teleport", 13055);
 		c.getPA().sendFrame126("Pking Teleport", 13063);
 		c.getPA().sendFrame126("Skill Teleport", 13071);
 		c.getPA().sendFrame126("Monster Teleport", 1300);
-		c.getPA().sendFrame126("Minigame Teleport", 1325);
+		c.getPA().sendFrame126("Lumbridge Teleport", 1325);
 		c.getPA().sendFrame126("Boss Teleport", 1350);
 		c.getPA().sendFrame126("Pking Teleport", 1382);
 		c.getPA().sendFrame126("Skill Teleport", 1415);	

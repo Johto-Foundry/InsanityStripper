@@ -98,10 +98,6 @@ public class PlayerSave
 						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
-					} else if (token.equals("void")) {
-						for (int j = 0; j < token3.length; j++) {
-							p.voidStatus[j] = Integer.parseInt(token3[j]);						
-						}
 					} else if (token.equals("gwkc")) {
 						p.killCount = Integer.parseInt(token2);
 					} else if (token.equals("fightMode")) {
@@ -259,10 +255,6 @@ characterfile.write("special-amount = ", 0, 17);
 			characterfile.newLine();
 			characterfile.write("fightMode = ", 0, 12);
 			characterfile.write(Integer.toString(p.fightMode), 0, Integer.toString(p.fightMode).length());
-			characterfile.newLine();
-			characterfile.write("void = ", 0, 7);
-			String toWrite = p.voidStatus[0] + "\t" + p.voidStatus[1] + "\t" + p.voidStatus[2] + "\t" + p.voidStatus[3] + "\t" + p.voidStatus[4];
-			characterfile.write(toWrite);
 			characterfile.newLine();
 			characterfile.newLine();
 			

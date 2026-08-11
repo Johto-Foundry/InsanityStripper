@@ -258,28 +258,8 @@ public class ItemAssistant {
 	
 	public void handleSpecialPickup(int itemId) {
 		//c.sendMessage("My " + getItemName(itemId) + " has been recovered. I should talk to the void knights to get it back.");
-		//c.getItems().addToVoidList(itemId);
 	}
 	
-	public void addToVoidList(int itemId) {
-		switch (itemId) {
-			case 2518:
-			c.voidStatus[0]++;
-			break;
-			case 2520:
-			c.voidStatus[1]++;
-			break;
-			case 2522:
-			c.voidStatus[2]++;
-			break;
-			case 2524:
-			c.voidStatus[3]++;
-			break;
-			case 2526:
-			c.voidStatus[4]++;
-			break;	
-		}
-	}
 	
 	public boolean tradeable(int itemId) {
 		for (int j = 0; j < Config.ITEM_TRADEABLE.length; j++) {

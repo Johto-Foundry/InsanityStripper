@@ -33,8 +33,6 @@ public class ClickingButtons implements PacketType {
 				if (c.teleAction == 1) {
 					//rock crabs
 					c.getPA().spellTeleport(2676, 3715, 0);
-				} else if (c.teleAction == 2) {
-					c.sendMessage("This teleport is currently unavailable.");
 				} else if (c.teleAction == 3) {
 					//godwars
 					c.getPA().spellTeleport(2916, 3612, 0);
@@ -64,9 +62,6 @@ public class ClickingButtons implements PacketType {
 				if (c.teleAction == 1) {
 					//tav dungeon
 					c.getPA().spellTeleport(2884, 9798, 0);
-				} else if (c.teleAction == 2) {
-					//pest control
-					c.getPA().spellTeleport(2662, 2650, 0);
 				} else if (c.teleAction == 3) {
 					//kbd
 					c.getPA().spellTeleport(3007, 3849, 0);
@@ -93,9 +88,6 @@ public class ClickingButtons implements PacketType {
 				if (c.teleAction == 1) {
 					//slayer tower
 					c.getPA().spellTeleport(3428, 3537, 0);
-				} else if (c.teleAction == 2) {
-					//tzhaar
-					c.getPA().spellTeleport(2444, 5170, 0);
 				} else if (c.teleAction == 3) {
 					//dag kings
 					c.getPA().spellTeleport(2479, 10147, 0);
@@ -121,9 +113,6 @@ public class ClickingButtons implements PacketType {
 				if (c.teleAction == 1) {
 					//brimhaven dungeon
 					c.getPA().spellTeleport(2710, 9466, 0);
-				} else if (c.teleAction == 2) {
-					//duel arena
-					c.getPA().spellTeleport(3366, 3266, 0);
 				} else if (c.teleAction == 3) {
 					//chaos elemental
 					c.getPA().spellTeleport(3295, 3921, 0);
@@ -152,10 +141,6 @@ public class ClickingButtons implements PacketType {
 				if (c.teleAction == 1) {
 					//island
 					c.getPA().spellTeleport(2895, 2727, 0);
-				} else if (c.teleAction == 2) {
-					//last minigame spot
-					c.sendMessage("Suggest something for this spot on the forums!");
-					c.getPA().closeAllWindows();
 				} else if (c.teleAction == 3) {
 					//last monster spot
 					c.sendMessage("Suggest something for this spot on the forums!");
@@ -273,8 +258,6 @@ public class ClickingButtons implements PacketType {
 					c.getPA().startTeleport(3428, 3538, 0, "modern");
 				if (c.dialogueAction == 3)		
 					c.getPA().startTeleport(Config.EDGEVILLE_X, Config.EDGEVILLE_Y, 0, "modern");
-				if (c.dialogueAction == 4)
-					c.getPA().startTeleport(3565, 3314, 0, "modern");
 				if (c.dialogueAction == 20) {
 					c.getPA().startTeleport(2897, 3618, 4, "modern");
 					c.killCount = 0;
@@ -289,8 +272,6 @@ public class ClickingButtons implements PacketType {
 					c.getPA().startTeleport(2884, 3395, 0, "modern");
 				if (c.dialogueAction == 3)
 					c.getPA().startTeleport(3243, 3513, 0, "modern");
-				if (c.dialogueAction == 4)
-					c.getPA().startTeleport(2444, 5170, 0, "modern");
 				if (c.dialogueAction == 20) {
 					c.getPA().startTeleport(2897, 3618, 12, "modern");
 					c.killCount = 0;
@@ -304,8 +285,6 @@ public class ClickingButtons implements PacketType {
 					c.getPA().startTeleport(2471,10137, 0, "modern");	
 				if (c.dialogueAction == 3)
 					c.getPA().startTeleport(3363, 3676, 0, "modern");
-				if (c.dialogueAction == 4)
-					c.getPA().startTeleport(2659, 2676, 0, "modern");
 				if (c.dialogueAction == 20) {
 					c.getPA().startTeleport(2897, 3618, 8, "modern");
 					c.killCount = 0;
@@ -319,10 +298,6 @@ public class ClickingButtons implements PacketType {
 					c.getPA().startTeleport(2669,3714, 0, "modern");
 				if (c.dialogueAction == 3)	
 					c.getPA().startTeleport(2540, 4716, 0, "modern");
-				if (c.dialogueAction == 4) {
-					c.getPA().startTeleport(3366, 3266, 0, "modern");
-					c.sendMessage("Dueling is at your own risk. Refunds will not be given for items lost due to glitches.");
-				}
 				if (c.dialogueAction == 20) {
 					//c.getPA().startTeleport(3366, 3266, 0, "modern");
 					//c.killCount = 0;
@@ -680,9 +655,8 @@ public class ClickingButtons implements PacketType {
 			
 			case 4143:
 			case 50245:
-			c.getDH().sendOption5("Coming Soon", "Pest Control", "Tzhaar", "Duel Arena", "Coming Soon");
-			c.teleAction = 2;
-			break;
+				c.getPA().startTeleport(Config.LUMBY_X, Config.LUMBY_Y, 0, "modern");
+				break;
 			
 			case 50253:
 			case 4146:
